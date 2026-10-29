@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exportadores · Manual NuHub</title>
+<meta name="description" content="Cómo usar NuHub Exportadores en Revit: exporta por lotes a PDF, DWG, DXF, NWC, IFC, CSV y Excel con nombres según tu nomenclatura.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../"><i>N</i>Manual NuHub</a>
+  <a class="volver" href="../">← Todos los plugins</a>
+</div>
+<main>
+  <div class="arriba">
+  <header>
+    <div class="panel">Gestión BIM · Exportadores</div>
+    <h1>Exportadores: planos, vistas y tablas a todos los formatos</h1>
+    <p class="entrada">Exportadores saca por lotes planos, vistas y tablas a PDF, DWG o DXF, NWC, IFC, CSV y Excel, con el nombre de cada archivo armado a partir de los metadatos del plano y con configuraciones que puedes guardar.</p>
+  </header>
+  <section class="encaja">
+    <h2>Dónde encaja</h2>
+    <p class="bajada">El último paso: la entrega de archivos al cliente o a otros programas.</p>
+    <div class="flujo"><span class="">Modelo listo</span><em>→</em><span class="aqui">Exportadores</span><em>→ PDF · DWG · NWC · IFC · Excel</em></div>
+  </section>
+  </div>
+
+  <section class="ficha" aria-label="Ficha rápida"><div><b>Dónde está</b>Pestaña NuHub → panel Gestión BIM → <span class="boton">Exportadores</span></div><div><b>Necesita</b>El modelo con planos, vistas o tablas</div><div><b>Gasta un uso</b>Por cada archivo exportado</div><div><b>Entrega</b>Archivos en las carpetas de salida e informe en Excel</div></section>
+
+  <section>
+    <h2>Mapa del proceso</h2>
+    <p class="bajada">De un vistazo: el recorrido y dónde se gasta la licencia. Los números son los mismos del paso a paso de abajo.</p>
+    <div class="diagrama"><svg viewBox="-20 -30 1240 480" role="img" aria-label="Proceso de Exportadores: abrir, elegir planos, vistas o tablas, armar la nomenclatura, elegir formatos, configurar, elegir carpetas y exportar."><g class="nodo" transform="translate(12.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M4 5h16v12H4z M4 9h16 M8 21h8 M12 17v4"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">1</text><text class="tit" x="88.0" y="78" text-anchor="middle">Abrir el modelo</text><text class="tit" x="88.0" y="96" text-anchor="middle">y Exportadores</text><text class="sub" x="88.0" y="114" text-anchor="middle">NuHub → Gestión BIM</text></g><path class="linea-f" d="M188,100 H212"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(212,100) rotate(0)"/><g class="nodo" transform="translate(222.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M9 6h11 M9 12h11 M9 18h11 M4 6h1 M4 12h1 M4 18h1"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">2</text><text class="tit" x="88.0" y="78" text-anchor="middle">Elegir qué</text><text class="tit" x="88.0" y="96" text-anchor="middle">exportar</text><text class="sub" x="88.0" y="114" text-anchor="middle">Planos · vistas · tablas</text></g><path class="linea-f" d="M398,100 H422"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(422,100) rotate(0)"/><g class="nodo" transform="translate(432.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M4 6h16 M12 6v13 M8 19h8"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">3</text><text class="tit" x="88.0" y="78" text-anchor="middle">Armar la</text><text class="tit" x="88.0" y="96" text-anchor="middle">nomenclatura</text><text class="sub" x="88.0" y="114" text-anchor="middle">Por metadatos</text></g><path class="linea-f" d="M608,100 H632"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(632,100) rotate(0)"/><g class="nodo" transform="translate(642.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M4 6h10 M18 6h2 M4 12h4 M12 12h8 M4 18h12 M20 18h0 M14 4v4 M8 10v4 M16 16v4"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">4</text><text class="tit" x="88.0" y="78" text-anchor="middle">Formatos y</text><text class="tit" x="88.0" y="96" text-anchor="middle">configuración</text><text class="sub" x="88.0" y="114" text-anchor="middle">PDF · CAD · NWC · IFC</text></g><path class="linea-f" d="M818,100 H842"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(842,100) rotate(0)"/><g class="nodo" transform="translate(852.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M3 6h6l2 2h10v11H3z"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">5</text><text class="tit" x="88.0" y="78" text-anchor="middle">Carpetas</text><text class="tit" x="88.0" y="96" text-anchor="middle">de salida</text><text class="sub" x="88.0" y="114" text-anchor="middle">Una por formato</text></g><path class="linea-f" d="M1028,100 H1120 V330 H1038"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(1038,330) rotate(180)"/><g class="nodo" transform="translate(852.0,266.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M4 12l16-8-6 16-3-6z M11 14l9-10"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">6</text><text class="tit" x="88.0" y="78" text-anchor="middle">Exportar</text><text class="sub" x="88.0" y="98" text-anchor="middle">O «Exportar todo»</text><rect class="uso-r" x="15" y="-10" width="169" height="20" rx="10"/><text class="uso-t" x="99.5" y="4" text-anchor="middle">1 uso por archivo</text></g></svg></div>
+    <div class="leyenda-f">
+      <span><i></i> Siguiente paso</span><span><i class="si"></i> Sí</span><span><i class="no"></i> No</span>
+      <span><b class="r"></b> Decisión</span><span><span class="paso-uso">1 uso</span> Gasta un uso de la licencia</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Paso a paso</h2>
+    <p class="bajada">El detalle de cada paso del mapa: qué botón pulsar y qué pasa.</p>
+    <div class="proceso"><div class="paso"><div><h3>Abre Exportadores</h3><p>Pulsa <span class="boton">Exportadores</span>. Pestañas: <b>Planos</b>, <b>Vistas</b> y <b>Tablas de planificación</b>. Si cambian los planos en Revit, <span class="boton">Actualizar</span>.</p></div></div><div class="paso"><div><h3>Elige qué exportar</h3><p>Marca planos o vistas; filtra y usa los <span class="boton">Publish Settings del modelo</span> (conjuntos de planos). Guarda la selección en <span class="boton">Configuraciones de selección</span>.</p></div></div><div class="paso decision"><div><h3>Arma la nomenclatura</h3><p><span class="boton">Nomenclatura para DWG y PDF por metadatos</span>: eliges qué datos del plano forman el nombre, el separador y un consecutivo, con <span class="boton">Vista previa</span> antes de aplicar.</p></div></div><div class="paso"><div><h3>Formatos y configuración</h3><p><span class="boton">Configurar PDF</span>: papel, color, combinar en un solo PDF. <span class="boton">Configurar CAD</span>: capas, colores, unidades y versión de AutoCAD. NWC e IFC: sus opciones nativas. Tablas: CSV o Excel. Todo se guarda como plantilla (máx. 5).</p></div></div><div class="paso"><div><h3>Carpetas de salida</h3><p>Una carpeta por formato, y la opción de abrirla al terminar.</p></div></div><div class="paso"><div><h3>Exporta</h3><p><span class="boton">Exportar</span> o <span class="boton">Exportar todo</span>, con progreso y tiempo restante. <span class="boton">Exportar informe a Excel</span> deja constancia de lo exportado.</p><span class="uso">Gasta 1 uso por cada archivo exportado</span></div></div></div>
+  </section>
+
+  <section>
+    <h2>Ejemplos de uso</h2>
+    <p class="bajada">Situaciones reales de un proyecto y cómo se resuelven con Exportadores.</p>
+    <div class="ejemplos"><article class="ejemplo"><h3>Entrega al cliente en PDF y DWG</h3><p class="quien">Coordinador de planos · entrega de fase</p><ol><li>Marca los 60 planos de la fase.</li><li>Nomenclatura: código-disciplina-número-revisión.</li><li>PDF y DWG con la plantilla del cliente y «Exportar todo».</li></ol><p class="resultado"><b>Resultado:</b> 120 archivos con el nombre que pide el cliente, en sus carpetas.</p></article><article class="ejemplo"><h3>NWC e IFC para coordinación</h3><p class="quien">Coordinador BIM · reunión de coordinación</p><ol><li>Pestaña NWC: vista 3D de coordinación, coordenadas compartidas.</li><li>IFC con el archivo de clases por categoría.</li></ol><p class="resultado"><b>Resultado:</b> los archivos de coordinación listos con la misma configuración cada semana.</p></article><article class="ejemplo"><h3>Tablas a Excel</h3><p class="quien">Ingeniero de costos · cuadros de áreas</p><ol><li>Pestaña Tablas: marca las tablas de áreas.</li><li>«Todo en un solo Excel», una hoja por tabla.</li></ol><p class="resultado"><b>Resultado:</b> un solo Excel con todas las tablas, con números como números.</p></article></div>
+  </section>
+
+  <div class="dos">
+  <section><h2>Formatos</h2><p class="bajada">Cada formato tiene su propia configuración guardable.</p><div class="tabla"><table><thead><tr><th>Formato</th><th>Qué exporta</th></tr></thead><tbody><tr><td>PDF</td><td>Planos, uno por plano o combinados en uno solo.</td></tr><tr><td>DWG · DXF</td><td>Planos o vistas, con capas, colores y unidades.</td></tr><tr><td>NWC</td><td>Vistas 3D para Navisworks.</td></tr><tr><td>IFC</td><td>El modelo o vistas 3D, con clases por categoría.</td></tr><tr><td>CSV · Excel</td><td>Tablas de planificación.</td></tr></tbody></table></div></section>
+  <section><h2>Preguntas frecuentes</h2><div class="preguntas"><details><summary>¿Qué gasta un uso?</summary><p>Cada archivo exportado: 10 planos en PDF y DWG son 20 usos. Configurar y la vista previa no gastan usos.</p></details><details><summary>¿Necesito algo para NWC?</summary><p>El exportador de Navisworks (NWC Export Utility) instalado para tu versión de Revit.</p></details></div></section>
+  </div>
+</main>
+<footer>© 2026 NuHub · Manual de usuario · Exportadores V.0.10 · Los plugins NuHub y su desarrollo son propiedad de NuHub. Para soporte, usa la pestaña PQR del plugin Cuenta NuHub.</footer>
+</body>
+</html>

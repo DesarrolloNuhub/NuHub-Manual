@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Editar Información · Manual NuHub</title>
+<meta name="description" content="Cómo usar NuHub Editar Información en Revit: edita parámetros de muchos elementos en una tabla o desde Excel y aplícalos al modelo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../"><i>N</i>Manual NuHub</a>
+  <a class="volver" href="../">← Todos los plugins</a>
+</div>
+<main>
+  <div class="arriba">
+  <header>
+    <div class="panel">Gestión BIM · Editar Información</div>
+    <h1>Editar Información: muchos parámetros, una sola tabla</h1>
+    <p class="entrada">Editar Información pone en una tabla los parámetros de familias, tipos, instancias, planos, vistas y la información del proyecto. Editas como en una hoja de cálculo, o en Excel, y aplicas todo al modelo de una vez.</p>
+  </header>
+  <section class="encaja">
+    <h2>Dónde encaja</h2>
+    <p class="bajada">Ideal para completar lo que la Matriz LOIN o el Auditor marcan como faltante.</p>
+    <div class="flujo"><span class="">Matriz LOIN · Auditor</span><em>→ qué falta →</em><span class="aqui">Editar Información</span><em>→ modelo completo</em></div>
+  </section>
+  </div>
+
+  <section class="ficha" aria-label="Ficha rápida"><div><b>Dónde está</b>Pestaña NuHub → panel Gestión BIM → <span class="boton">Editar Información</span></div><div><b>Necesita</b>El modelo abierto</div><div><b>Gasta un uso</b>Cada vez que pulsas <span class="boton">Aplicar cambios al modelo</span></div><div><b>Entrega</b>Parámetros actualizados en el modelo; se deshace con Ctrl+Z</div></section>
+
+  <section>
+    <h2>Mapa del proceso</h2>
+    <p class="bajada">De un vistazo: el recorrido, las decisiones y dónde se gasta la licencia. Los números son los mismos del paso a paso de abajo.</p>
+    <div class="diagrama"><svg viewBox="-20 -30 1240 480" role="img" aria-label="Proceso de Editar Información: abrir, elegir categorías, elegir parámetros, editar en la tabla o en Excel, revisar los estados, aplicar al modelo."><g class="nodo" transform="translate(12.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M4 5h16v12H4z M4 9h16 M8 21h8 M12 17v4"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">1</text><text class="tit" x="88.0" y="78" text-anchor="middle">Abrir el modelo</text><text class="tit" x="88.0" y="96" text-anchor="middle">y el editor</text><text class="sub" x="88.0" y="114" text-anchor="middle">NuHub → Gestión BIM</text></g><path class="linea-f" d="M188,100 H212"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(212,100) rotate(0)"/><g class="nodo" transform="translate(222.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M4 5h16l-6 8v6l-4-2v-4z"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">2</text><text class="tit" x="88.0" y="78" text-anchor="middle">Elegir las</text><text class="tit" x="88.0" y="96" text-anchor="middle">categorías</text><text class="sub" x="88.0" y="114" text-anchor="middle">Y la hoja a editar</text></g><path class="linea-f" d="M398,100 H422"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(422,100) rotate(0)"/><g class="nodo" transform="translate(432.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M3 12V4h8l10 10-8 8z M7.5 7.5h0.01"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">3</text><text class="tit" x="88.0" y="78" text-anchor="middle">Elegir los</text><text class="tit" x="88.0" y="96" text-anchor="middle">parámetros</text><text class="sub" x="88.0" y="114" text-anchor="middle">Proyecto · compartidos</text></g><path class="linea-f" d="M608,100 H632"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(632,100) rotate(0)"/><g class="nodo" transform="translate(642.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M4 20l4-1 11-11-3-3L5 16z M14 6l3 3"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">4</text><text class="tit" x="88.0" y="78" text-anchor="middle">Editar en</text><text class="tit" x="88.0" y="96" text-anchor="middle">la tabla</text><text class="sub" x="88.0" y="114" text-anchor="middle">O exportar a Excel</text></g><path class="linea-f" d="M818,100 H842"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(842,100) rotate(0)"/><g class="nodo" transform="translate(852.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M6 3h12v18H6z M9 8l6 8 M15 8l-6 8"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">5</text><text class="tit" x="88.0" y="78" text-anchor="middle">Cargar desde</text><text class="tit" x="88.0" y="96" text-anchor="middle">Excel</text><text class="sub" x="88.0" y="114" text-anchor="middle">Opcional</text></g><path class="linea-f" d="M1028,100 H1120 V330 H1020"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(1020,330) rotate(180)"/><polygon class="rombo" points="940,276 1010,330 940,384 870,330"/><text class="rombo-t" x="940" y="327" text-anchor="middle">¿Todo listo,</text><text class="rombo-t" x="940" y="343" text-anchor="middle">sin rojos?</text><path class="linea-no" d="M940,384 V404"/><path class="punta-no" d="M0,-6 L10,0 L0,6 z" transform="translate(940,404) rotate(90)"/><text class="etq no" x="948" y="400">No</text><g class="nota"><rect x="835" y="406" width="210" height="34" rx="8"/><text x="940" y="427" text-anchor="middle">Corrige las celdas en rojo</text></g><path class="linea-si" d="M870,330 H828"/><path class="punta-si" d="M0,-6 L10,0 L0,6 z" transform="translate(828,330) rotate(180)"/><text class="etq si" x="836" y="322">Sí</text><g class="nodo" transform="translate(642.0,266.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M7 4l13 8-13 8z"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">6</text><text class="tit" x="88.0" y="78" text-anchor="middle">Aplicar cambios</text><text class="tit" x="88.0" y="96" text-anchor="middle">al modelo</text><text class="sub" x="88.0" y="114" text-anchor="middle">Se deshace con Ctrl+Z</text><rect class="uso-r" x="114" y="-10" width="70" height="20" rx="10"/><text class="uso-t" x="149.0" y="4" text-anchor="middle">1 uso</text></g></svg></div>
+    <div class="leyenda-f">
+      <span><i></i> Siguiente paso</span><span><i class="si"></i> Sí</span><span><i class="no"></i> No</span>
+      <span><b class="r"></b> Decisión</span><span><span class="paso-uso">1 uso</span> Gasta un uso de la licencia</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Paso a paso</h2>
+    <p class="bajada">El detalle de cada paso del mapa: qué botón pulsar y qué pasa.</p>
+    <div class="proceso"><div class="paso"><div><h3>Abre el editor</h3><p>Pulsa <span class="boton">Editar Información</span>. A la izquierda, las categorías modeladas y tus configuraciones guardadas.</p></div></div><div class="paso"><div><h3>Elige categorías y hoja</h3><p>Marca las categorías. A la derecha eliges la hoja: <b>Resumen</b>, <b>Family Name</b> (parámetros de tipo), <b>Type Name</b> (de instancia), <b>Project Info</b>, <b>Sheets</b> o <b>Views</b>.</p></div></div><div class="paso decision"><div><h3>Elige los parámetros</h3><p><span class="boton">Parámetros</span> abre el selector: de proyecto, compartidos o todos. Usa el buscador, <span class="boton">Ordenar por</span> y <span class="boton">Filtrar por</span> para quedarte con lo que necesitas.</p></div></div><div class="paso"><div><h3>Edita en la tabla</h3><p>Escribe directo en las celdas. Lo que cambias queda en <span class="estado noexiste">Modificado (pendiente de aplicar)</span> hasta que lo apliques.</p></div></div><div class="paso"><div><h3>O trabaja en Excel</h3><p><span class="boton">Exportar a Excel</span> (todo o lo filtrado), edita allá y vuelve con <span class="boton">Cargar desde Excel</span>. El editor te dice qué filas cargó y cuáles no.</p></div></div><div class="paso"><div><h3>Aplica al modelo</h3><p><span class="boton">Aplicar cambios al modelo</span> escribe todos los valores de una vez. Las celdas que no se pudieron aplicar quedan en rojo para corregirlas. En Revit se deshace con Ctrl+Z.</p><span class="uso">Gasta 1 uso de la licencia</span></div></div></div>
+  </section>
+
+  <section>
+    <h2>Ejemplos de uso</h2>
+    <p class="bajada">Situaciones reales de un proyecto y cómo se resuelven con Editar Información.</p>
+    <div class="ejemplos"><article class="ejemplo"><h3>Completar lo que pide la LOIN</h3><p class="quien">Modelador · la Matriz LOIN marcó 300 puertas sin marca ni material</p><ol><li>Elige Puertas, hoja Type Name, parámetros Marca y Material.</li><li>Exporta a Excel y lo llena el proveedor.</li><li>Carga desde Excel y aplica.</li></ol><p class="resultado"><b>Resultado:</b> las 300 puertas completas en minutos, sin editar una por una.</p></article><article class="ejemplo"><h3>Revisión antes de borrar</h3><p class="quien">Coordinador · limpieza del modelo</p><ol><li>Filtra los elementos sospechosos y márcalos.</li><li>«Crear vista 3D» con el sufijo «Por eliminar».</li></ol><p class="resultado"><b>Resultado:</b> una vista 3D con solo esos elementos para revisarlos antes de borrarlos.</p></article><article class="ejemplo"><h3>Información de planos</h3><p class="quien">Coordinador de planos · cambio de fase</p><ol><li>Hoja Sheets: cambia el parámetro Fase en todos los planos.</li><li>Aplica al modelo.</li></ol><p class="resultado"><b>Resultado:</b> todos los rótulos actualizados de una vez.</p></article></div>
+  </section>
+
+  <div class="dos">
+  <section><h2>Qué significa cada color</h2><p class="bajada">La tabla marca el estado de cada celda.</p><div class="tabla"><table><thead><tr><th>Estado</th><th>Qué hacer</th></tr></thead><tbody><tr><td>Editable</td><td>Puedes escribir.</td></tr><tr><td><span class="estado noexiste">Modificado (pendiente de aplicar)</span></td><td>Pulsa «Aplicar cambios al modelo».</td></tr><tr><td><span class="estado pendiente">No se pudo aplicar</span></td><td>Revisa el valor (tipo de dato, parámetro bloqueado).</td></tr><tr><td><span class="estado noaplica">No aplica / solo lectura</span></td><td>Revit no deja cambiar ese parámetro.</td></tr></tbody></table></div></section>
+  <section><h2>Preguntas frecuentes</h2><div class="preguntas"><details><summary>¿Qué gasta un uso?</summary><p>Cada vez que pulsas «Aplicar cambios al modelo» y se escribe al menos un valor. Editar, exportar y cargar Excel no gasta usos.</p></details><details><summary>¿Se puede deshacer?</summary><p>Sí: todo lo aplicado es una sola operación de Revit; Ctrl+Z la deshace.</p></details><details><summary>¿Puedo seguir trabajando en Revit?</summary><p>Sí. La ventana no bloquea Revit. Si cambias el modelo, pulsa «Volver a leer».</p></details></div></section>
+  </div>
+</main>
+<footer>© 2026 NuHub · Manual de usuario · Editar Información V.0.13 · Los plugins NuHub y su desarrollo son propiedad de NuHub. Para soporte, usa la pestaña PQR del plugin Cuenta NuHub.</footer>
+</body>
+</html>

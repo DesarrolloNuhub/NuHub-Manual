@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Validador · Manual NuHub</title>
+<meta name="description" content="Cómo usar NuHub Validador: compara auditorías y cantidades entre una entrega anterior y una posterior.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../"><i>N</i>Manual NuHub</a>
+  <a class="volver" href="../">← Todos los plugins</a>
+</div>
+<main>
+  <div class="arriba">
+  <header>
+    <div class="panel">Externos · Validador</div>
+    <h1>Validador: qué cambió entre dos entregas</h1>
+    <p class="entrada">El Validador compara una entrega anterior (A) con una posterior (B): auditorías del Auditor o exportaciones de Cantidades. Te dice qué se mantuvo, qué cambió, qué es nuevo y qué se eliminó. No toca el modelo.</p>
+  </header>
+  <section class="encaja">
+    <h2>Dónde encaja</h2>
+    <p class="bajada">Trabaja con los archivos que generan el Auditor y Cantidades. Funciona aunque no haya un proyecto abierto.</p>
+    <div class="flujo"><span class="">Auditor</span><em>·</em><span class="">Cantidades</span><em>→ archivos A y B →</em><span class="aqui">Validador</span></div>
+  </section>
+  </div>
+
+  <section class="ficha" aria-label="Ficha rápida"><div><b>Dónde está</b>Pestaña NuHub → panel Externos → <span class="boton">Validador</span></div><div><b>Necesita</b>Archivos <code>.nuhubAuditor</code> o <code>.nuhubCantidades</code> de dos entregas</div><div><b>Gasta un uso</b>Por cada par A vs B que exportas a PDF o Excel</div><div><b>Entrega</b>Informe PDF y Excel de la comparación</div></section>
+
+  <section>
+    <h2>Mapa del proceso</h2>
+    <p class="bajada">De un vistazo: el recorrido, las decisiones y dónde se gasta la licencia. Los números son los mismos del paso a paso de abajo.</p>
+    <div class="diagrama"><svg viewBox="-20 -30 1240 480" role="img" aria-label="Proceso del Validador: elegir la pestaña, cargar versión A y versión B, revisar los pares, comparar y exportar el informe."><g class="nodo" transform="translate(12.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M4 5h16v12H4z M4 9h16 M8 21h8 M12 17v4"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">1</text><text class="tit" x="88.0" y="78" text-anchor="middle">Abrir el</text><text class="tit" x="88.0" y="96" text-anchor="middle">Validador</text><text class="sub" x="88.0" y="114" text-anchor="middle">Sin proyecto abierto</text></g><path class="linea-f" d="M188,100 H212"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(212,100) rotate(0)"/><g class="nodo" transform="translate(222.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M9 6h11 M9 12h11 M9 18h11 M4 6h1 M4 12h1 M4 18h1"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">2</text><text class="tit" x="88.0" y="78" text-anchor="middle">Elegir</text><text class="tit" x="88.0" y="96" text-anchor="middle">la pestaña</text><text class="sub" x="88.0" y="114" text-anchor="middle">Auditoría BIM · Cantidades</text></g><path class="linea-f" d="M398,100 H422"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(422,100) rotate(0)"/><g class="nodo" transform="translate(432.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M7 3h7l4 4v14H7z M14 3v4h4 M10 12h5 M10 15h5 M10 18h3"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">3</text><text class="tit" x="88.0" y="78" text-anchor="middle">Cargar la</text><text class="tit" x="88.0" y="96" text-anchor="middle">versión A</text><text class="sub" x="88.0" y="114" text-anchor="middle">Entrega anterior</text></g><path class="linea-f" d="M608,100 H632"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(632,100) rotate(0)"/><g class="nodo" transform="translate(642.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M7 3h7l4 4v14H7z M14 3v4h4 M10 12h5 M10 15h5 M10 18h3"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">4</text><text class="tit" x="88.0" y="78" text-anchor="middle">Cargar la</text><text class="tit" x="88.0" y="96" text-anchor="middle">versión B</text><text class="sub" x="88.0" y="114" text-anchor="middle">Entrega posterior</text></g><path class="linea-f" d="M818,100 H860"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(860,100) rotate(0)"/><polygon class="rombo" points="940,46 1010,100 940,154 870,100"/><text class="rombo-t" x="940" y="97" text-anchor="middle">¿Pares</text><text class="rombo-t" x="940" y="113" text-anchor="middle">correctos?</text><path class="linea-no" d="M940,46 V26"/><path class="punta-no" d="M0,-6 L10,0 L0,6 z" transform="translate(940,26) rotate(-90)"/><text class="etq no" x="948" y="40">No</text><g class="nota"><rect x="835" y="-10" width="210" height="34" rx="8"/><text x="940" y="11" text-anchor="middle">Ajusta el par a mano</text></g><path class="linea-si" d="M1010,100 H1120 V330 H1038"/><path class="punta-si" d="M0,-6 L10,0 L0,6 z" transform="translate(1038,330) rotate(180)"/><g class="nodo" transform="translate(852.0,266.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M7 4v16 M17 4v16 M3 8h8 M13 16h8 M9 6l2 2-2 2 M15 14l-2 2 2 2"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">5</text><text class="tit" x="88.0" y="78" text-anchor="middle">Comparar</text><text class="tit" x="88.0" y="96" text-anchor="middle">cada par</text><text class="sub" x="88.0" y="114" text-anchor="middle">Igual · Cambió · Nuevo</text></g><path class="linea-f" d="M852,330 H828"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(828,330) rotate(180)"/><g class="nodo" transform="translate(642.0,266.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M7 3h7l4 4v14H7z M14 3v4h4 M9 13h2a1.5 1.5 0 0 1 0 3H9v-3z M9 16v2"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">6</text><text class="tit" x="88.0" y="78" text-anchor="middle">Exportar</text><text class="tit" x="88.0" y="96" text-anchor="middle">el informe</text><text class="sub" x="88.0" y="114" text-anchor="middle">PDF y Excel</text><rect class="uso-r" x="51" y="-10" width="133" height="20" rx="10"/><text class="uso-t" x="117.5" y="4" text-anchor="middle">1 uso por par</text></g></svg></div>
+    <div class="leyenda-f">
+      <span><i></i> Siguiente paso</span><span><i class="si"></i> Sí</span><span><i class="no"></i> No</span>
+      <span><b class="r"></b> Decisión</span><span><span class="paso-uso">1 uso</span> Gasta un uso de la licencia</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Paso a paso</h2>
+    <p class="bajada">El detalle de cada paso del mapa: qué botón pulsar y qué pasa.</p>
+    <div class="proceso"><div class="paso"><div><h3>Abre el Validador</h3><p>Pulsa <span class="boton">Validador</span>. No necesitas tener un proyecto abierto.</p></div></div><div class="paso"><div><h3>Elige la pestaña</h3><p><span class="boton">Auditoría BIM</span> compara archivos <code>.nuhubAuditor</code>; <span class="boton">Cantidades</span> compara <code>.nuhubCantidades</code>.</p></div></div><div class="paso"><div><h3>Carga la versión A</h3><p>En <span class="boton">Versión A · anterior</span>, <span class="boton">Agregar archivos…</span> o arrastra los archivos (o una carpeta).</p></div></div><div class="paso decision"><div><h3>Carga la versión B</h3><p>Lo mismo en <span class="boton">Versión B · posterior</span> con la entrega nueva. Los <b>pares</b> se arman solos por el código del documento en el nombre del archivo.</p></div></div><div class="paso"><div><h3>Compara cada par</h3><p>Elige un par para ver el resultado: <span class="estado corregido">Iguales</span> <span class="estado noexiste">Diferentes</span> <span class="estado noaplica">Nuevos</span> <span class="estado pendiente">Eliminados</span>, y el cumplimiento global. Comparar no gasta usos.</p></div></div><div class="paso"><div><h3>Exporta el informe</h3><p><span class="boton">Exportar PDF</span>, <span class="boton">Exportar Excel</span> o <span class="boton">Generar PDF y Excel</span>: un informe por par o uno solo con todos.</p><span class="uso">Gasta 1 uso por cada par exportado</span></div></div></div>
+  </section>
+
+  <section>
+    <h2>Ejemplos de uso</h2>
+    <p class="bajada">Situaciones reales de un proyecto y cómo se resuelven con Validador.</p>
+    <div class="ejemplos"><article class="ejemplo"><h3>Verificar que se corrigió</h3><p class="quien">Coordinador BIM · después de las correcciones del Revisor</p><ol><li>En A, la auditoría de la semana pasada; en B, la de hoy.</li><li>Revisa los «Diferentes»: pasaron de No cumple a Cumple.</li><li>Exporta el PDF.</li></ol><p class="resultado"><b>Resultado:</b> prueba documentada de lo que se corrigió entre las dos auditorías.</p></article><article class="ejemplo"><h3>Cambios de cantidades</h3><p class="quien">Ingeniero de costos · nueva versión de estructura</p><ol><li>En la pestaña Cantidades, A = entrega 2 y B = entrega 3.</li><li>Filtra por «Diferentes».</li></ol><p class="resultado"><b>Resultado:</b> ve qué Type Names cambiaron de cantidad y actualiza solo esas partidas.</p></article><article class="ejemplo"><h3>Todas las disciplinas a la vez</h3><p class="quien">BIM manager · cierre de fase</p><ol><li>Arrastra la carpeta de la fase anterior a A y la actual a B.</li><li>Los pares se arman por código (ARQ, EST, MEP…).</li><li>«Comparar todos» y un solo informe.</li></ol><p class="resultado"><b>Resultado:</b> un informe único de la fase para el cliente.</p></article></div>
+  </section>
+
+  <div class="dos">
+  <section><h2>Cómo se arman los pares</h2><p class="bajada">Por el código del documento en el nombre del archivo; mayúsculas, guion y guion bajo no importan.</p><div class="tabla"><table><thead><tr><th>Nombre del archivo</th><th>Código que usa</th></tr></thead><tbody><tr><td>Auditoria BIM - NUH-F3-XXX-ARQ-MO-0001 - 2026-10-23</td><td>NUH-F3-XXX-ARQ-MO-0001</td></tr><tr><td>NUH-F3-XXX-ARQ-MO-0001_Cantidades_2026-10-24</td><td>NUH-F3-XXX-ARQ-MO-0001</td></tr><tr><td>Sin código reconocible</td><td>El nombre del modelo guardado dentro del archivo</td></tr><tr><td>Varias versiones del mismo código</td><td>La más reciente de A con la más reciente de B</td></tr></tbody></table></div></section>
+  <section><h2>Preguntas frecuentes</h2><div class="preguntas"><details><summary>¿Qué gasta un uso?</summary><p>Cada par A vs B que exportas a PDF o Excel. Cargar archivos y comparar en pantalla no gasta usos.</p></details><details><summary>Un par quedó mal emparejado</summary><p>Cambia A o B en las listas del par, o usa el menú ⋯ › «Agregar un par a mano».</p></details><details><summary>¿Modifica el modelo?</summary><p>No. Solo lee archivos; funciona aunque Revit no tenga un proyecto abierto.</p></details></div></section>
+  </div>
+</main>
+<footer>© 2026 NuHub · Manual de usuario · Validador V.0.5 · Los plugins NuHub y su desarrollo son propiedad de NuHub. Para soporte, usa la pestaña PQR del plugin Cuenta NuHub.</footer>
+</body>
+</html>

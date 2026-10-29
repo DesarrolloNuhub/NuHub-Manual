@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Externos · Manual NuHub</title>
+<meta name="description" content="Cómo usar NuHub Externos: procesa por lote hasta 30 modelos de Revit con auditoría, cantidades y exportaciones NWC e IFC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../"><i>N</i>Manual NuHub</a>
+  <a class="volver" href="../">← Todos los plugins</a>
+</div>
+<main>
+  <div class="arriba">
+  <header>
+    <div class="panel">Externos · Externos</div>
+    <h1>Externos: hasta 30 modelos por lote, sin abrirlos uno a uno</h1>
+    <p class="entrada">Externos abre en segundo plano, de a uno, hasta 30 modelos de una carpeta y a cada uno le hace las tareas que elijas: Auditor, Cantidades, NWC o IFC. Al final te entrega los informes de cada modelo y un reporte del lote.</p>
+  </header>
+  <section class="encaja">
+    <h2>Dónde encaja</h2>
+    <p class="bajada">Usa los mismos motores del Auditor, Cantidades y Exportadores, con plantillas propias de Externos.</p>
+    <div class="flujo"><span class="">Carpeta con modelos</span><em>→</em><span class="aqui">Externos</span><em>→ informes por modelo + reporte del lote</em></div>
+  </section>
+  </div>
+
+  <section class="ficha" aria-label="Ficha rápida"><div><b>Dónde está</b>Pestaña NuHub → panel Externos → <span class="boton">Externos</span></div><div><b>Necesita</b>Revit abierto (no hace falta un proyecto) y una carpeta con modelos .rvt</div><div><b>Gasta un uso</b>Por cada tarea terminada en un modelo</div><div><b>Entrega</b>Informes de cada tarea y Reporte de modelos en PDF y Excel</div></section>
+
+  <section>
+    <h2>Mapa del proceso</h2>
+    <p class="bajada">De un vistazo: el recorrido, las decisiones y dónde se gasta la licencia. Los números son los mismos del paso a paso de abajo.</p>
+    <div class="diagrama"><svg viewBox="-20 -30 1240 480" role="img" aria-label="Proceso de Externos: elegir modelos, decidir cómo se abren y dónde se guardan, marcar tareas, configurar cada tarea, ejecutar y revisar el reporte."><g class="nodo" transform="translate(12.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M3 6h6l2 2h10v11H3z"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">1</text><text class="tit" x="88.0" y="78" text-anchor="middle">Elegir los</text><text class="tit" x="88.0" y="96" text-anchor="middle">modelos</text><text class="sub" x="88.0" y="114" text-anchor="middle">Hasta 30 · subcarpetas</text></g><path class="linea-f" d="M188,100 H212"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(212,100) rotate(0)"/><g class="nodo" transform="translate(222.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M4 6h10 M18 6h2 M4 12h4 M12 12h8 M4 18h12 M20 18h0 M14 4v4 M8 10v4 M16 16v4"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">2</text><text class="tit" x="88.0" y="78" text-anchor="middle">Cómo se abren</text><text class="tit" x="88.0" y="96" text-anchor="middle">y dónde guardar</text><text class="sub" x="88.0" y="114" text-anchor="middle">Copia temporal sin vínculos</text></g><path class="linea-f" d="M398,100 H422"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(422,100) rotate(0)"/><g class="nodo" transform="translate(432.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M6 4h12v4H6z M4 10h16v4H4z M6 16h12v4H6z"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">3</text><text class="tit" x="88.0" y="78" text-anchor="middle">Marcar las</text><text class="tit" x="88.0" y="96" text-anchor="middle">tareas</text><text class="sub" x="88.0" y="114" text-anchor="middle">Auditor · Cantidades · NWC · IFC</text></g><path class="linea-f" d="M608,100 H632"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(632,100) rotate(0)"/><g class="nodo" transform="translate(642.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M4 4h16v16H4z M4 9h16 M9 9v11"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">4</text><text class="tit" x="88.0" y="78" text-anchor="middle">Configurar</text><text class="tit" x="88.0" y="96" text-anchor="middle">cada tarea</text><text class="sub" x="88.0" y="114" text-anchor="middle">General o por modelo</text></g><path class="linea-f" d="M818,100 H842"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(842,100) rotate(0)"/><g class="nodo" transform="translate(852.0,36.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M7 4l13 8-13 8z"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">5</text><text class="tit" x="88.0" y="78" text-anchor="middle">Ejecutar</text><text class="tit" x="88.0" y="96" text-anchor="middle">el lote</text><text class="sub" x="88.0" y="114" text-anchor="middle">Tiempo y usos estimados</text><rect class="uso-r" x="33" y="-10" width="151" height="20" rx="10"/><text class="uso-t" x="108.5" y="4" text-anchor="middle">1 uso por tarea</text></g><path class="linea-f" d="M1028,100 H1120 V330 H1020"/><path class="punta" d="M0,-6 L10,0 L0,6 z" transform="translate(1020,330) rotate(180)"/><polygon class="rombo" points="940,276 1010,330 940,384 870,330"/><text class="rombo-t" x="940" y="327" text-anchor="middle">¿Todos los</text><text class="rombo-t" x="940" y="343" text-anchor="middle">modelos bien?</text><path class="linea-no" d="M940,384 V404"/><path class="punta-no" d="M0,-6 L10,0 L0,6 z" transform="translate(940,404) rotate(90)"/><text class="etq no" x="948" y="400">No</text><g class="nota"><rect x="835" y="406" width="210" height="34" rx="8"/><text x="940" y="427" text-anchor="middle">El motivo queda en el reporte</text></g><path class="linea-si" d="M870,330 H828"/><path class="punta-si" d="M0,-6 L10,0 L0,6 z" transform="translate(828,330) rotate(180)"/><text class="etq si" x="836" y="322">Sí</text><g class="nodo" transform="translate(642.0,266.0)"><rect width="176" height="128" rx="12"/><circle class="aro" cx="88.0" cy="34" r="24"/><g transform="translate(74.2,20.2) scale(1.15)"><path class="ico" d="M7 3h7l4 4v14H7z M14 3v4h4 M9 13h2a1.5 1.5 0 0 1 0 3H9v-3z M9 16v2"/></g><circle class="num" cx="22" cy="20" r="11"/><text class="num-t" x="22" y="24.5" text-anchor="middle">6</text><text class="tit" x="88.0" y="78" text-anchor="middle">Revisar el</text><text class="tit" x="88.0" y="96" text-anchor="middle">reporte</text><text class="sub" x="88.0" y="114" text-anchor="middle">PDF y Excel del lote</text></g></svg></div>
+    <div class="leyenda-f">
+      <span><i></i> Siguiente paso</span><span><i class="si"></i> Sí</span><span><i class="no"></i> No</span>
+      <span><b class="r"></b> Decisión</span><span><span class="paso-uso">1 uso</span> Gasta un uso de la licencia</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Paso a paso</h2>
+    <p class="bajada">El detalle de cada paso del mapa: qué botón pulsar y qué pasa.</p>
+    <div class="proceso"><div class="paso"><div><h3>Elige los modelos</h3><p>En <span class="boton">Resumen</span>, elige la carpeta (o agrega archivos, o arrástralos). Máximo 30. Se omiten las copias de respaldo de Revit.</p></div></div><div class="paso"><div><h3>Decide cómo se abren</h3><p>Recomendado: <b>abrir sin vínculos, en una copia temporal</b>. El original no se toca ni queda bloqueado. Los colaborativos se abren desligados del central. Nada se guarda. Por defecto los resultados van a Documentos\NuHub Externos.</p></div></div><div class="paso"><div><h3>Marca las tareas</h3><p>En la tabla «Qué se hace a cada modelo», una casilla por tarea en cada modelo. El encabezado de la columna marca o desmarca esa tarea en todos.</p></div></div><div class="paso decision"><div><h3>Configura cada tarea</h3><p>En las pestañas Auditor, Cantidades, NWC e IFC defines una configuración general, o un archivo propio para algún modelo. Las plantillas de Externos son independientes de las de cada plugin.</p></div></div><div class="paso"><div><h3>Ejecuta el lote</h3><p><span class="boton">Ejecutar todo</span> muestra antes los modelos, las tareas, el tiempo estimado y los usos. Revit queda ocupado mientras tanto; conviene hacerlo al final del día.</p><span class="uso">Gasta 1 uso por tarea terminada en cada modelo</span></div></div><div class="paso"><div><h3>Revisa el reporte</h3><p>El <b>Reporte de modelos</b> (PDF y Excel) dice qué se procesó, cuánto tardó cada modelo, qué falló y por qué, y qué se omitió. Si un modelo falla, el lote sigue con el siguiente.</p></div></div></div>
+  </section>
+
+  <section>
+    <h2>Ejemplos de uso</h2>
+    <p class="bajada">Situaciones reales de un proyecto y cómo se resuelven con Externos.</p>
+    <div class="ejemplos"><article class="ejemplo"><h3>Auditoría de todos los modelos del proyecto</h3><p class="quien">BIM manager · cierre de mes con 12 modelos</p><ol><li>Elige la carpeta del proyecto con subcarpetas.</li><li>Marca la tarea Auditor en todos.</li><li>Lo ejecuta a las 6 p. m.</li></ol><p class="resultado"><b>Resultado:</b> al día siguiente tiene 12 auditorías y el reporte del lote, sin abrir ningún modelo a mano.</p></article><article class="ejemplo"><h3>NWC para la reunión de coordinación</h3><p class="quien">Coordinador · reunión semanal en Navisworks</p><ol><li>Marca NWC en los modelos de todas las disciplinas.</li><li>Usa la vista 3D de coordinación de cada modelo.</li></ol><p class="resultado"><b>Resultado:</b> todos los NWC actualizados en una carpeta, listos para Navisworks.</p></article><article class="ejemplo"><h3>Cantidades de varios edificios</h3><p class="quien">Ingeniero de costos · conjunto de 5 torres</p><ol><li>Marca Cantidades en las 5 torres con la misma configuración.</li><li>Ejecuta el lote.</li></ol><p class="resultado"><b>Resultado:</b> cinco Excel con la misma estructura, fáciles de consolidar.</p></article></div>
+  </section>
+
+  <div class="dos">
+  <section><h2>Qué deja en la carpeta de salida</h2><p class="bajada">Cada ejecución crea una carpeta con la fecha y una subcarpeta por tarea.</p><div class="tabla"><table><thead><tr><th>Carpeta</th><th>Archivos</th></tr></thead><tbody><tr><td>Auditor</td><td>PDF consolidado, PDF de pendientes, Excel de correcciones y .nuhubAuditor de cada modelo.</td></tr><tr><td>Cantidades</td><td>Excel, PDF del resumen, PDF de instancias y .nuhubCantidades.</td></tr><tr><td>NWC · IFC</td><td>Un archivo por modelo (o por vista 3D).</td></tr><tr><td>Raíz</td><td>Reporte de modelos en PDF y Excel.</td></tr></tbody></table></div></section>
+  <section><h2>Preguntas frecuentes</h2><div class="preguntas"><details><summary>¿Qué gasta un uso?</summary><p>Cada tarea terminada en un modelo: por ejemplo, Auditor y Cantidades en 10 modelos son 20 usos. Antes de empezar te muestra el total.</p></details><details><summary>¿Toca mis archivos originales?</summary><p>Con la opción recomendada trabaja sobre una copia temporal, sin vínculos, y no guarda nada.</p></details><details><summary>¿Abre modelos de otra versión de Revit?</summary><p>No. Solo procesa modelos de la versión de Revit que tienes abierta; los demás quedan en el reporte como omitidos.</p></details><details><summary>¿Cuánto tarda?</summary><p>Depende del peso de cada modelo: pueden ser varios minutos por modelo. La ventana muestra un tiempo estimado.</p></details></div></section>
+  </div>
+</main>
+<footer>© 2026 NuHub · Manual de usuario · Externos V.0.4 · Los plugins NuHub y su desarrollo son propiedad de NuHub. Para soporte, usa la pestaña PQR del plugin Cuenta NuHub.</footer>
+</body>
+</html>
