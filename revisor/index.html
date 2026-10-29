@@ -36,7 +36,7 @@
   <section class="ficha" aria-label="Ficha rápida">
     <div><b>Dónde está</b>Pestaña NuHub → panel Gestión BIM → <span class="boton">Revisor</span></div>
     <div><b>Necesita</b>El archivo <code>.nuhubAuditor</code> que genera el Auditor con «Generar informes»</div>
-    <div><b>Gasta un uso</b>Cada vez que pulsas <span class="boton">Crear vistas 3D (Modelos)</span></div>
+    <div><b>Gasta un uso</b>Cada vez que cargas un archivo con <span class="boton">Abrir archivo de auditoría…</span></div>
     <div><b>Entrega</b>Vistas 3D por apartado, conjunto de planos con observaciones y Excel de avance</div>
   </section>
 
@@ -55,7 +55,8 @@
           <li>Que el archivo <b>no se haya modificado</b> después de generarse (tiene un código de integridad).</li>
           <li>Que sea <b>del modelo abierto</b>. Si es de otro modelo, te avisa.</li>
         </ul>
-        <p>La próxima vez que abras el Revisor en ese modelo, vuelve a cargar el mismo archivo solo.</p>
+        <p>La próxima vez que abras el Revisor en ese modelo, vuelve a cargar el mismo archivo solo, sin gastar otro uso.</p>
+        <span class="uso">Gasta 1 uso de la licencia</span>
       </div></div>
       <div class="paso"><div>
         <h3>Revisa los apartados con «No cumple»</h3>
@@ -64,8 +65,7 @@
       <div class="paso"><div>
         <h3>Crea las vistas 3D</h3>
         <p>Pulsa <span class="boton">Crear vistas 3D (Modelos)</span>. Se crea una vista por cada apartado de Modelos, llamada por ejemplo <code>Revisor_3D_M06 - Elementos en su nivel</code>, con los elementos <b>pendientes en rojo</b>, el resto oculto y la caja de sección ajustada.</p>
-        <p>En reglas de colisión (M19) la vista muestra el grupo A en verde y el B en rojo. Cada vez que creas las vistas, se reemplazan las anteriores.</p>
-        <span class="uso">Gasta 1 uso de la licencia</span>
+        <p>En reglas de colisión (M19) la vista muestra el grupo A en verde y el B en rojo. Cada vez que creas las vistas, se reemplazan las anteriores. Crear las vistas no gasta usos: puedes rehacerlas cuantas veces quieras.</p>
       </div></div>
       <div class="paso"><div>
         <h3>Ve a cada hallazgo y corrígelo</h3>
@@ -158,14 +158,14 @@
         <p>El archivo de auditoría no se puede editar a mano: si alguien lo cambió, el Revisor no lo abre. Genera uno nuevo con el Auditor (botón «Generar informes»).</p></details>
       <details><summary>Corregí un elemento y sigue en rojo</summary>
         <p>Las vistas 3D muestran el estado del momento en que se crearon. Pulsa «Volver a revisar el modelo» y vuelve a crear las vistas; o marca el hallazgo como «Corregido». Para confirmarlo del todo, vuelve a pasar el Auditor.</p></details>
-      <details><summary>¿Crear las vistas varias veces gasta varios usos?</summary>
-        <p>Sí: cada vez que pulsas «Crear vistas 3D (Modelos)» cuenta un uso. Con el plan anual los usos son ilimitados; en la prueba tienes 10.</p></details>
+      <details><summary>¿Qué gasta un uso?</summary>
+        <p>Cargar un archivo de auditoría con «Abrir archivo de auditoría…». Cuando vuelves a abrir el Revisor, el último archivo se recarga solo y no gasta otro uso. Crear las vistas 3D, ir a los hallazgos, marcar el seguimiento y exportar no gastan usos. Con el plan anual los usos son ilimitados; en la prueba tienes 10.</p></details>
       <details><summary>¿Se pierde el seguimiento si cierro Revit?</summary>
         <p>No. El seguimiento y los comentarios se guardan en un archivo <code>.nuhubRevisor</code> junto al modelo (o junto al modelo central, si trabajas en colaborativo). Si el modelo está en una carpeta compartida, todo el equipo ve el mismo seguimiento. No se guarda nada dentro del .rvt.</p></details>
     </div>
   </section>
   </div>
 </main>
-<footer>© 2026 NuHub · Manual de usuario · Revisor V.0.3 · Los plugins NuHub y su desarrollo son propiedad de NuHub. Para soporte, usa la pestaña PQR del plugin Cuenta NuHub.</footer>
+<footer>© 2026 NuHub · Manual de usuario · Revisor V.0.4 · Los plugins NuHub y su desarrollo son propiedad de NuHub. Para soporte, usa la pestaña PQR del plugin Cuenta NuHub.</footer>
 </body>
 </html>
