@@ -114,3 +114,32 @@ a.tarjeta:hover { border-color: var(--azul); }
 
 footer { max-width: 1320px; margin: 0 auto; padding-block: 24px 40px; border-top: 1px solid var(--linea); color: var(--tenue); font-size: 13px; }
 :focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; }
+
+/* Diagrama de flujo con íconos (SVG). Colores desde los tokens para que funcione en claro y oscuro */
+.diagrama { background: var(--hoja); border: 1px solid var(--linea); border-radius: 12px; padding: 14px; overflow-x: auto; }
+.diagrama svg { display: block; width: 100%; min-width: 900px; height: auto; }
+.diagrama .nodo rect { fill: var(--hoja); stroke: var(--linea); stroke-width: 1.5; }
+.diagrama .nodo .aro { fill: var(--azul-suave); stroke: var(--azul); stroke-width: 1.5; }
+.diagrama .nodo .ico { fill: none; stroke: var(--azul); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.diagrama .nodo .num { fill: var(--azul); }
+.diagrama .nodo .num-t { fill: #fff; font: 600 12px var(--mono); }
+.diagrama .tit { fill: var(--texto); font: 600 14px var(--fuente); }
+.diagrama .sub { fill: var(--suave); font: 400 12px var(--fuente); }
+.diagrama .rombo { fill: var(--ambar-suave); stroke: var(--ambar); stroke-width: 1.5; }
+.diagrama .rombo-t { fill: var(--texto); font: 600 12.5px var(--fuente); }
+.diagrama .linea-f { fill: none; stroke: var(--tenue); stroke-width: 2; }
+.diagrama .linea-si { fill: none; stroke: var(--verde); stroke-width: 2; }
+.diagrama .linea-no { fill: none; stroke: var(--rojo); stroke-width: 2; stroke-dasharray: 6 5; }
+.diagrama .etq { font: 600 12px var(--fuente); }
+.diagrama .etq.si { fill: var(--verde); } .diagrama .etq.no { fill: var(--rojo); }
+.diagrama .uso-r { fill: var(--ambar-suave); stroke: var(--ambar); stroke-width: 1; }
+.diagrama .uso-t { fill: var(--ambar); font: 600 11px var(--fuente); }
+.diagrama .nota rect { fill: var(--rojo-suave); stroke: var(--rojo); stroke-width: 1; stroke-dasharray: 4 3; }
+.diagrama .nota text { fill: var(--texto); font: 400 12px var(--fuente); }
+.diagrama .punta { fill: var(--tenue); } .diagrama .punta-si { fill: var(--verde); } .diagrama .punta-no { fill: var(--rojo); }
+.leyenda-f { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 10px; color: var(--suave); font-size: 13px; }
+.leyenda-f span { display: inline-flex; align-items: center; gap: 6px; }
+.leyenda-f i { display: inline-block; width: 22px; height: 0; border-top: 2px solid var(--tenue); }
+.leyenda-f i.si { border-color: var(--verde); } .leyenda-f i.no { border-color: var(--rojo); border-top-style: dashed; }
+.leyenda-f b.r { display: inline-block; width: 12px; height: 12px; transform: rotate(45deg); background: var(--ambar-suave); border: 1.5px solid var(--ambar); }
+.paso-uso { font-size: 12px; font-weight: 600; color: var(--ambar); background: var(--ambar-suave); border: 1px solid var(--ambar); padding: 0 8px; border-radius: 999px; }
