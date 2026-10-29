@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revisor · Manual NuHub</title>
+<meta name="description" content="Cómo usar NuHub Revisor en Revit: lleva al modelo los «No cumple» del Auditor, crea vistas 3D por apartado y hace el seguimiento de las correcciones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="../"><i>N</i>Manual NuHub</a>
+  <a class="volver" href="../">← Todos los plugins</a>
+</div>
+
+<main>
+  <div class="arriba">
+  <header>
+    <div class="panel">Gestión BIM · Revisor</div>
+    <h1>Revisor: de la auditoría al modelo corregido</h1>
+    <p class="entrada">El Auditor te dice qué no cumple. El Revisor te lleva a cada uno de esos elementos dentro de Revit, los pinta en vistas 3D y te deja marcar qué ya se corrigió, para que el equipo trabaje sobre una lista viva y no sobre un PDF.</p>
+  </header>
+
+  <section class="encaja">
+    <h2>Dónde encaja</h2>
+    <p class="bajada">El Revisor trabaja con el resultado del Auditor. No audita por sí mismo: sigue las correcciones.</p>
+    <div class="flujo">
+      <span>Auditor</span><em>→ genera .nuhubAuditor →</em><span class="aqui">Revisor</span><em>→ corregir en Revit →</em><span>Auditor otra vez</span><em>→ para confirmar</em>
+    </div>
+  </section>
+
+  </div>
+
+  <section class="ficha" aria-label="Ficha rápida">
+    <div><b>Dónde está</b>Pestaña NuHubTools → panel Gestión BIM → <span class="boton">Revisor</span></div>
+    <div><b>Necesita</b>El archivo <code>.nuhubAuditor</code> que genera el Auditor con «Generar informes»</div>
+    <div><b>Gasta un uso</b>Cada vez que pulsas <span class="boton">Crear vistas 3D (Modelos)</span></div>
+    <div><b>Entrega</b>Vistas 3D por apartado, conjunto de planos con observaciones y Excel de avance</div>
+  </section>
+
+  <section>
+    <h2>Mapa del proceso</h2>
+    <p class="bajada">El recorrido completo, de abrir el archivo a entregar el avance.</p>
+    <div class="proceso">
+      <div class="paso"><div>
+        <h3>Abre el modelo y el Revisor</h3>
+        <p>Con el modelo auditado abierto en Revit, pulsa <span class="boton">Revisor</span>. La ventana no bloquea Revit: puedes seguir trabajando con ella abierta.</p>
+      </div></div>
+      <div class="paso decision"><div>
+        <h3>Carga el archivo de auditoría</h3>
+        <p>Pulsa <span class="boton">Abrir archivo de auditoría…</span> y elige el <code>.nuhubAuditor</code>. El Revisor comprueba dos cosas antes de cargarlo:</p>
+        <ul>
+          <li>Que el archivo <b>no se haya modificado</b> después de generarse (tiene un código de integridad).</li>
+          <li>Que sea <b>del modelo abierto</b>. Si es de otro modelo, te avisa.</li>
+        </ul>
+        <p>La próxima vez que abras el Revisor en ese modelo, vuelve a cargar el mismo archivo solo.</p>
+      </div></div>
+      <div class="paso"><div>
+        <h3>Revisa los apartados con «No cumple»</h3>
+        <p>A la izquierda ves los apartados agrupados en <b>Generalidades</b>, <b>Modelos</b> y <b>Planos</b>, cada uno con sus pendientes y corregidos. Al elegir uno, la tabla muestra sus hallazgos: elemento, categoría, criterio, qué se esperaba, qué se encontró y en qué vista se ve.</p>
+      </div></div>
+      <div class="paso"><div>
+        <h3>Crea las vistas 3D</h3>
+        <p>Pulsa <span class="boton">Crear vistas 3D (Modelos)</span>. Se crea una vista por cada apartado de Modelos, llamada por ejemplo <code>Revisor_3D_M06 - Elementos en su nivel</code>, con los elementos <b>pendientes en rojo</b>, el resto oculto y la caja de sección ajustada.</p>
+        <p>En reglas de colisión (M19) la vista muestra el grupo A en verde y el B en rojo. Cada vez que creas las vistas, se reemplazan las anteriores.</p>
+        <span class="uso">Gasta 1 uso de la licencia</span>
+      </div></div>
+      <div class="paso"><div>
+        <h3>Ve a cada hallazgo y corrígelo</h3>
+        <p>Selecciona una fila y pulsa <span class="boton">Ir a</span>, o haz doble clic. El Revisor abre la vista correcta y selecciona el elemento (mira la tabla «Qué hace “Ir a”» más abajo). Corriges en Revit como siempre.</p>
+      </div></div>
+      <div class="paso"><div>
+        <h3>Marca el seguimiento</h3>
+        <p>Elige uno o varios hallazgos (Ctrl o Shift), escoge el estado en <b>Elegidos</b> y pulsa <span class="boton">Aplicar</span>. Puedes dejar un comentario.</p>
+        <p><span class="estado pendiente">Pendiente</span> <span class="estado corregido">Corregido</span> <span class="estado noaplica">No aplica</span></p>
+        <p>Pulsa <span class="boton">Volver a revisar el modelo</span> para que el Revisor busque otra vez los elementos: los que ya no existen salen como <span class="estado noexiste">No existe (posible corregido)</span>.</p>
+      </div></div>
+      <div class="paso"><div>
+        <h3>Entrega el avance</h3>
+        <ul>
+          <li><span class="boton">Exportar a Excel</span>: hoja <b>Resumen</b> por apartado (no cumple, pendientes, corregidos, no aplica, ya no existen y % de avance) y hoja <b>Hallazgos</b> con el detalle.</li>
+          <li><span class="boton">Conjunto de planos con observaciones</span>: crea el conjunto <code>Revisor - Planos con observaciones</code> con los planos que tienen pendientes, listo para imprimir o exportar.</li>
+        </ul>
+      </div></div>
+      <div class="paso"><div>
+        <h3>Limpia al terminar</h3>
+        <p><span class="boton">Limpiar vistas del Revisor</span> borra las vistas <code>Revisor_3D_</code> y el conjunto de planos, para entregar el modelo sin vistas de trabajo.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ejemplos de uso</h2>
+    <p class="bajada">Tres situaciones reales de un proyecto y cómo se resuelven con el Revisor.</p>
+    <div class="ejemplos">
+      <article class="ejemplo">
+        <h3>Corregir lo que dejó la auditoría</h3>
+        <p class="quien">Modelador de estructura · el coordinador BIM le envía la auditoría de su modelo</p>
+        <ol>
+          <li>Abre su modelo y el Revisor, y carga el <code>.nuhubAuditor</code> que le enviaron.</li>
+          <li>Crea las vistas 3D: aparece <code>Revisor_3D_M06 - Elementos en su nivel</code> con 23 vigas en rojo.</li>
+          <li>Corrige el nivel de las vigas y pulsa «Volver a revisar el modelo».</li>
+          <li>Marca como «No aplica», con un comentario, dos vigas de transferencia que sí van en otro nivel.</li>
+        </ol>
+        <p class="resultado"><b>Resultado:</b> M06 queda en 0 pendientes y el coordinador ve por qué hay dos excepciones.</p>
+      </article>
+      <article class="ejemplo">
+        <h3>Revisar planos antes de una entrega</h3>
+        <p class="quien">Coordinador de planos · entrega al cliente el viernes</p>
+        <ol>
+          <li>En el apartado de Planos, revisa los rótulos y tablas con «No cumple».</li>
+          <li>Pulsa «Conjunto de planos con observaciones».</li>
+          <li>Imprime o exporta a PDF ese conjunto y lo reparte entre el equipo.</li>
+        </ol>
+        <p class="resultado"><b>Resultado:</b> cada persona corrige solo los planos que tienen observaciones, no el juego completo.</p>
+      </article>
+      <article class="ejemplo">
+        <h3>Reunión semanal de avance</h3>
+        <p class="quien">BIM manager · comité de coordinación de los lunes</p>
+        <ol>
+          <li>Abre el Revisor en cada modelo: carga solo el último archivo de auditoría.</li>
+          <li>Pulsa «Volver a revisar el modelo» para actualizar qué ya no existe.</li>
+          <li>Exporta a Excel y comparte la hoja Resumen con el % de avance por apartado.</li>
+        </ol>
+        <p class="resultado"><b>Resultado:</b> el comité ve en una tabla qué disciplinas avanzan y cuáles están atrasadas.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="dos">
+  <section>
+    <h2>Qué hace «Ir a» según el tipo de hallazgo</h2>
+    <p class="bajada">Cada hallazgo se busca en el modelo abierto. Según lo que sea, el Revisor te lleva a un lugar distinto.</p>
+    <div class="tabla">
+      <table>
+        <thead><tr><th>Si el hallazgo es…</th><th>El Revisor…</th></tr></thead>
+        <tbody>
+          <tr><td>Un elemento de modelo, CAD o vínculo</td><td>Lo muestra en la vista 3D de su apartado.</td></tr>
+          <tr><td>Un tipo o una familia (por ejemplo M01, M02, M17)</td><td>Muestra sus ejemplares en la vista 3D.</td></tr>
+          <tr><td>Una vista, un plano o una tabla</td><td>Abre esa vista.</td></tr>
+          <tr><td>Una anotación (texto, etiqueta, rótulo)</td><td>Abre su vista y la selecciona.</td></tr>
+          <tr><td>Otro elemento (nivel, eje, punto base)</td><td>Lo selecciona y lo muestra.</td></tr>
+          <tr><td>Algo sin elemento (peso del archivo, unidades, parámetros del proyecto)</td><td>Lo deja en la lista de trabajo con la acción para corregirlo.</td></tr>
+          <tr><td>Un elemento que ya no está en el modelo</td><td>Lo marca <span class="estado noexiste">No existe (posible corregido)</span>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Preguntas frecuentes</h2>
+    <div class="preguntas">
+      <details><summary>Me dice que el archivo es de otro modelo</summary>
+        <p>El <code>.nuhubAuditor</code> guarda de qué modelo salió. Revisa que abriste el modelo correcto, o pide al coordinador la auditoría de este modelo.</p></details>
+      <details><summary>Me dice que el archivo fue modificado</summary>
+        <p>El archivo de auditoría no se puede editar a mano: si alguien lo cambió, el Revisor no lo abre. Genera uno nuevo con el Auditor (botón «Generar informes»).</p></details>
+      <details><summary>Corregí un elemento y sigue en rojo</summary>
+        <p>Las vistas 3D muestran el estado del momento en que se crearon. Pulsa «Volver a revisar el modelo» y vuelve a crear las vistas; o marca el hallazgo como «Corregido». Para confirmarlo del todo, vuelve a pasar el Auditor.</p></details>
+      <details><summary>¿Crear las vistas varias veces gasta varios usos?</summary>
+        <p>Sí: cada vez que pulsas «Crear vistas 3D (Modelos)» cuenta un uso. Con el plan anual los usos son ilimitados; en la prueba tienes 10.</p></details>
+      <details><summary>¿Se pierde el seguimiento si cierro Revit?</summary>
+        <p>No. El seguimiento y los comentarios se guardan en un archivo <code>.nuhubRevisor</code> junto al modelo (o junto al modelo central, si trabajas en colaborativo). Si el modelo está en una carpeta compartida, todo el equipo ve el mismo seguimiento. No se guarda nada dentro del .rvt.</p></details>
+    </div>
+  </section>
+  </div>
+</main>
+<footer>NuHub · Manual de usuario · Revisor V.0.3 · Para soporte, usa la pestaña PQR del plugin Cuenta NuHub.</footer>
+</body>
+</html>
