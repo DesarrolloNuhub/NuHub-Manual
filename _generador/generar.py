@@ -19,10 +19,10 @@ GRUPOS = [('Calidad BIM', ['auditor', 'cantidades', 'matriz-loin']),
 RESUMEN = {'auditor': 'Audita el modelo con las reglas del BEP.', 'cantidades': 'Cantidades del modelo a Excel y PDF.',
            'matriz-loin': 'Revisa la información que exige el proyecto por elemento.', 'colisiones': 'Detecta y sigue interferencias entre disciplinas.',
            'revisor': 'Lleva los «No cumple» del Auditor al modelo y sigue las correcciones.', 'editar-informacion': 'Edita parámetros de muchos elementos a la vez.',
-           'renombrar': 'Renombra familias, tipos, vistas, CAD y worksets.', 'plantillas': 'Ordena, copia y asigna plantillas de vista.',
+           'renombrar': 'Renombra familias, tipos, vistas, CAD y worksets.', 'plantillas': 'Ordena, compara, copia y asigna plantillas de vista.',
            'parametros': 'Crea parámetros y limpia duplicados.', 'exportadores': 'Exporta planos, vistas y tablas por lotes.',
-           'validador': 'Compara entregas: qué cambió entre A y B.', 'externos': 'Procesa hasta 30 modelos por lote.',
-           'cuenta': 'Sesión, plan, usos y PQR a soporte.'}
+           'validador': 'Compara entregas: auditoría, cantidades, LOIN y colisiones.', 'externos': 'Procesa hasta 30 modelos por lote, también planos en PDF y DWG.',
+           'cuenta': 'Tu cuenta, plan, usos, actualizaciones y PQR a soporte.'}
 secciones = ''.join(
     f'<section class="grupo"><h2>{g}</h2><div class="tarjetas">'
     + ''.join(f'<a class="tarjeta" href="{c}/"><b>{por[c]["nombre"]}</b><span>{RESUMEN[c]}</span></a>' for c in cs)

@@ -9,11 +9,11 @@ COLISIONES = {
     'descripcion': 'Cómo usar NuHub Colisiones en Revit: configura Clash entre disciplinas, calcula interferencias, sigue cada grupo y genera el informe.',
     'entrada': 'Colisiones es un pequeño proceso de coordinación dentro de Revit: defines qué choca con qué (hasta 10 Clash), calcula las interferencias, las agrupa por elemento y te deja seguir cada grupo hasta resolverlo. No reemplaza a Navisworks; te ahorra salir de Revit para lo del día a día.',
     'encaja_texto': 'Puede tomar las reglas de colisión (M19) que ya definiste en el Auditor.',
-    'encaja': [{'t': 'Auditor'}, {'flecha': '→ reglas M19 →'}, {'t': 'Colisiones', 'aqui': True}, {'flecha': '→ PDF · Excel'}],
+    'encaja': [{'t': 'Auditor'}, {'flecha': '→ reglas M19 →'}, {'t': 'Colisiones', 'aqui': True}, {'flecha': '→ PDF · Excel · BCF'}],
     'ficha': [('Dónde está', 'Pestaña NuHub → panel Gestión BIM → ' + B('Colisiones')),
               ('Necesita', 'El modelo abierto y, si quieres, un vínculo RVT para el lado B'),
               ('Gasta un uso', 'Cada vez que pulsas ' + B('Calcular colisiones')),
-              ('Entrega', 'Vistas 3D por Clash, seguimiento por grupo e informe PDF y Excel')],
+              ('Entrega', 'Vistas 3D por Clash, seguimiento por grupo, informe PDF y Excel, paquete .zip y BCF')],
     'aria': 'Proceso de Colisiones: configurar los Clash, calcular, revisar los grupos, seguir cada uno en el modelo, marcar el estado y generar el informe.',
     'flujo': [N('abrir', 'Abrir el modelo', 'y Colisiones', 'NuHub → Gestión BIM'),
               N('ajustes', 'Configurar', 'los Clash', 'A contra B · hasta 10'),
@@ -22,7 +22,7 @@ COLISIONES = {
               N('mira', 'Seguir en', 'el modelo', 'Ver en 3D · Seleccionar'),
               N('check', 'Marcar el', 'estado', 'Nueva → Resuelta'),
               R('¿Todas', 'resueltas?', no='Corrige y vuelve al paso 3'),
-              N('pdf', 'Generar', 'el informe', 'PDF y Excel')],
+              N('pdf', 'Generar', 'el informe', 'PDF · Excel · .zip · BCF')],
     'pasos': [
         {'t': 'Abre el modelo y Colisiones', 'html': '<p>Pulsa ' + B('Colisiones') + '. Tiene tres pestañas numeradas: Reglas, Resultados e Informe.</p>'},
         {'t': 'Configura los Clash', 'html': '<p>En ' + B('1 · Reglas (Clash)') + ', ' + B('Agregar Clash') + ': el lado <b>A</b> sale del modelo actual; el <b>B</b>, del modelo actual o de un vínculo RVT. Cada lado se filtra por categoría, Family Name, Type Name o Workset (hasta 3 valores), con tolerancia.</p>'
@@ -31,7 +31,9 @@ COLISIONES = {
         {'t': 'Revisa los grupos', 'html': '<p>En ' + B('2 · Resultados') + ' las colisiones se agrupan por elemento A: un muro que choca con 12 tubos es un solo grupo.</p>'},
         {'t': 'Síguelas en el modelo', 'html': '<p>' + B('Ver en 3D') + ', ' + B('Seleccionar') + ' o ' + B('Seguir en el modelo') + ' para ir a cada grupo y resolverlo en Revit.</p>'},
         {'t': 'Marca el estado', 'html': '<p>Cada grupo lleva estado, responsable y comentario: <span class="estado pendiente">Nueva</span> <span class="estado noexiste">Activa</span> <span class="estado noaplica">Revisada</span> <span class="estado corregido">Aprobada</span> <span class="estado corregido">Resuelta</span>. Elige varios y pulsa ' + B('Aplicar') + '.</p>'},
-        {'t': 'Genera el informe', 'html': '<p>En ' + B('3 · Informe') + ' llena proyecto, código, cliente, fase, Revisó, Aprobó y logo, y pulsa ' + B('Generar PDF y Excel') + '.</p>'},
+        {'t': 'Genera el informe', 'html': '<p>En ' + B('3 · Informe') + ' llena proyecto, código, cliente, fase, Revisó, Aprobó y logo, y pulsa ' + B('Generar PDF y Excel') + '.</p>'
+            '<p>' + B('Paquete .zip con imágenes') + ' junta en un solo archivo el PDF, el Excel, la imagen de cada grupo y una copia del archivo de coordinación.</p>'
+            '<p>' + B('Exportar a BCF') + ' crea un archivo BCF 2.1 con un tema por cada grupo sin resolver: título, estado, responsable, comentario, imagen y el punto de vista sobre el choque. Se abre en Navisworks, ACC / BIM 360, BIMcollab, Solibri o Revizto. Si exportas otra vez, cada grupo actualiza su tema en lugar de duplicarse.</p>'},
     ],
     'ejemplos': [
         {'t': 'Estructura contra instalaciones', 'quien': 'Coordinador MEP · vínculo de estructura cargado',
@@ -44,6 +46,9 @@ COLISIONES = {
         {'t': 'Informe para el comité', 'quien': 'Gerente de proyecto · comité de coordinación',
          'pasos': ['Llena los datos de la portada y el logo del cliente.', 'Genera PDF y Excel.'],
          'resultado': 'un informe con cada Clash, sus grupos, el estado y el responsable.'},
+        {'t': 'Seguir las colisiones en otra plataforma', 'quien': 'Coordinador BIM · el equipo trabaja en BIMcollab o ACC',
+         'pasos': ['Calcula y asigna responsable a cada grupo.', '«Exportar a BCF» y carga el archivo en la plataforma.', 'La semana siguiente vuelve a exportar: los temas se actualizan.'],
+         'resultado': 'cada persona ve su choque con la imagen y la cámara, sin abrir Revit.'},
     ],
     'tabla': {'t': 'Qué puedes combinar en un Clash', 'bajada': 'Hasta 10 Clash; cada lado con hasta 3 valores de filtro.',
               'cols': ['Lado', 'De dónde salen los elementos', 'Filtrar por'],
@@ -51,7 +56,7 @@ COLISIONES = {
                         ['B', 'El modelo abierto o un vínculo RVT.', 'Categoría, Family Name, Type Name o Workset'],
                         ['Tolerancia', 'Distancia mínima para contar como choque.', '—']]},
     'preguntas': [
-        ('¿Qué gasta un uso?', 'Cada vez que pulsas «Calcular colisiones». Revisar grupos, marcar estados y generar el informe no gasta usos.'),
+        ('¿Qué gasta un uso?', 'Cada vez que pulsas «Calcular colisiones». Revisar grupos, marcar estados, generar el informe, el paquete .zip y el BCF no gastan usos.'),
         ('¿Usa el Interference Check de Revit?', 'No. Tiene su propio cálculo de choque duro con tolerancia.'),
         ('¿Reemplaza a Navisworks?', 'No. Sirve para la coordinación del día a día sin salir de Revit; para federar muchos modelos, Navisworks sigue siendo la herramienta.'),
     ],
@@ -68,7 +73,7 @@ REVISOR = {
     'ficha': [('Dónde está', 'Pestaña NuHub → panel Gestión BIM → ' + B('Revisor')),
               ('Necesita', 'El archivo <code>.nuhubAuditor</code> que genera el Auditor con «Generar informes»'),
               ('Gasta un uso', 'Cada vez que cargas un archivo con ' + B('Abrir archivo de auditoría…')),
-              ('Entrega', 'Vistas 3D por apartado, conjunto de planos con observaciones y Excel de avance')],
+              ('Entrega', 'Vistas 3D por apartado, conjunto de planos con observaciones, Excel y PDF de avance')],
     'aria': 'Proceso del Revisor: abrir, cargar el archivo de auditoría (gasta un uso), comprobar que es íntegro y del modelo, revisar apartados, crear vistas 3D, ir a cada hallazgo y corregir, marcar el seguimiento, repetir mientras queden pendientes, entregar el avance y limpiar las vistas.',
     'flujo': [N('abrir', 'Abrir el modelo', 'y el Revisor', 'NuHub → Gestión BIM'),
               N('archivo', 'Cargar el', '.nuhubAuditor', 'Abrir archivo de auditoría…', uso=True),
@@ -78,10 +83,10 @@ REVISOR = {
               N('mira', 'Ir a cada hallazgo', 'y corregir', 'Doble clic en la fila'),
               N('check', 'Marcar el', 'seguimiento', 'Pendiente · Corregido · No aplica'),
               R('¿Quedan', 'pendientes?', ciclo=5, textoCiclo='Sí · «Volver a revisar el modelo»'),
-              N('excel', 'Entregar', 'el avance', 'Excel · planos con observaciones'),
+              N('excel', 'Entregar', 'el avance', 'Excel · PDF · planos con observaciones'),
               N('limpiar', 'Limpiar', 'vistas', 'Modelo sin vistas de trabajo')],
     'pasos': [
-        {'t': 'Abre el modelo y el Revisor', 'html': '<p>Con el modelo auditado abierto en Revit, pulsa ' + B('Revisor') + '. La ventana no bloquea Revit: puedes seguir trabajando con ella abierta.</p>'},
+        {'t': 'Abre el modelo y el Revisor', 'html': '<p>Con el modelo auditado abierto en Revit, pulsa ' + B('Revisor') + '. Puedes seguir trabajando en Revit con la ventana abierta.</p>'},
         {'t': 'Carga el archivo de auditoría', 'html': '<p>Pulsa ' + B('Abrir archivo de auditoría…') + ' y elige el <code>.nuhubAuditor</code>. El Revisor comprueba que el archivo <b>no se haya modificado</b> y que sea <b>del modelo abierto</b>.</p>'
             '<p>La próxima vez que abras el Revisor en ese modelo, vuelve a cargar el mismo archivo solo, sin gastar otro uso.</p>', 'destacar': True, 'uso': 'Gasta 1 uso de la licencia'},
         {'t': 'Revisa los apartados con «No cumple»', 'html': '<p>A la izquierda ves los apartados agrupados en <b>Generalidades</b>, <b>Modelos</b> y <b>Planos</b>, con sus pendientes y corregidos. La tabla muestra elemento, categoría, criterio, qué se esperaba, qué se encontró y en qué vista se ve.</p>'},
@@ -90,7 +95,8 @@ REVISOR = {
         {'t': 'Marca el seguimiento', 'html': '<p>Elige uno o varios hallazgos (Ctrl o Shift), escoge el estado en <b>Elegidos</b> y pulsa ' + B('Aplicar') + '. Puedes dejar un comentario.</p>'
             '<p><span class="estado pendiente">Pendiente</span> <span class="estado corregido">Corregido</span> <span class="estado noaplica">No aplica</span></p>'
             '<p>' + B('Volver a revisar el modelo') + ' busca otra vez los elementos: los que ya no existen salen como <span class="estado noexiste">No existe (posible corregido)</span>.</p>'},
-        {'t': 'Entrega el avance', 'html': '<p>' + B('Exportar a Excel') + ': hoja <b>Resumen</b> por apartado con % de avance y hoja <b>Hallazgos</b>. ' + B('Conjunto de planos con observaciones') + ' crea el conjunto de planos con pendientes, listo para imprimir.</p>'},
+        {'t': 'Entrega el avance', 'html': '<p>' + B('Exportar a Excel') + ': hoja <b>Resumen</b> por apartado con % de avance y hoja <b>Hallazgos</b>. ' + B('Conjunto de planos con observaciones') + ' crea el conjunto de planos con pendientes, listo para imprimir.</p>'
+            '<p>' + B('PDF de avance') + ': un informe con indicadores, avance global y por apartado, la lista de pendientes (con acción, responsable y comentario) y la de resueltos. Antes, en ' + B('Datos del informe') + ', llena proyecto, código, cliente, fase, firmas y logo: se guardan por modelo y salen en la portada y al final del PDF.</p>'},
         {'t': 'Limpia al terminar', 'html': '<p>' + B('Limpiar vistas del Revisor') + ' borra las vistas <code>Revisor_3D_</code> y el conjunto de planos.</p>'},
     ],
     'ejemplos': [
@@ -102,8 +108,8 @@ REVISOR = {
          'pasos': ['En el apartado de Planos, revisa los rótulos y tablas con «No cumple».', 'Pulsa «Conjunto de planos con observaciones».', 'Imprime o exporta a PDF ese conjunto y lo reparte entre el equipo.'],
          'resultado': 'cada persona corrige solo los planos que tienen observaciones, no el juego completo.'},
         {'t': 'Reunión semanal de avance', 'quien': 'BIM manager · comité de coordinación de los lunes',
-         'pasos': ['Abre el Revisor en cada modelo: carga solo el último archivo de auditoría.', 'Pulsa «Volver a revisar el modelo» para actualizar qué ya no existe.', 'Exporta a Excel y comparte la hoja Resumen con el % de avance por apartado.'],
-         'resultado': 'el comité ve en una tabla qué disciplinas avanzan y cuáles están atrasadas.'},
+         'pasos': ['Abre el Revisor en cada modelo: carga solo el último archivo de auditoría.', 'Pulsa «Volver a revisar el modelo» para actualizar qué ya no existe.', 'Genera el PDF de avance y lo comparte en la reunión.'],
+         'resultado': 'el comité ve en un informe qué disciplinas avanzan, qué falta y quién es responsable.'},
     ],
     'tabla': {'t': 'Qué hace «Ir a» según el tipo de hallazgo', 'bajada': 'Cada hallazgo se busca en el modelo abierto. Según lo que sea, el Revisor te lleva a un lugar distinto.',
               'cols': ['Si el hallazgo es…', 'El Revisor…'],
@@ -118,7 +124,7 @@ REVISOR = {
         ('Me dice que el archivo es de otro modelo', 'El .nuhubAuditor guarda de qué modelo salió. Revisa que abriste el modelo correcto, o pide la auditoría de este modelo.'),
         ('Me dice que el archivo fue modificado', 'El archivo de auditoría no se puede editar a mano: si alguien lo cambió, el Revisor no lo abre. Genera uno nuevo con el Auditor.'),
         ('Corregí un elemento y sigue en rojo', 'Las vistas 3D muestran el estado del momento en que se crearon. Pulsa «Volver a revisar el modelo» y vuelve a crear las vistas, o marca el hallazgo como «Corregido».'),
-        ('¿Qué gasta un uso?', 'Cargar un archivo de auditoría con «Abrir archivo de auditoría…». La recarga automática al volver a abrir el Revisor, crear vistas, ir a los hallazgos, marcar el seguimiento y exportar no gastan usos.'),
+        ('¿Qué gasta un uso?', 'Cargar un archivo de auditoría con «Abrir archivo de auditoría…». La recarga automática al volver a abrir el Revisor, crear vistas, ir a los hallazgos, marcar el seguimiento, exportar a Excel y el PDF de avance no gastan usos.'),
         ('¿Se pierde el seguimiento si cierro Revit?', 'No. Se guarda en un archivo .nuhubRevisor junto al modelo (o junto al central). Si el modelo está en una carpeta compartida, todo el equipo ve el mismo seguimiento.'),
     ],
 }
@@ -170,7 +176,7 @@ EDITAR = {
     'preguntas': [
         ('¿Qué gasta un uso?', 'Cada vez que pulsas «Aplicar cambios al modelo» y se escribe al menos un valor. Editar, exportar y cargar Excel no gasta usos.'),
         ('¿Se puede deshacer?', 'Sí: todo lo aplicado es una sola operación de Revit; Ctrl+Z la deshace.'),
-        ('¿Puedo seguir trabajando en Revit?', 'Sí. La ventana no bloquea Revit. Si cambias el modelo, pulsa «Volver a leer».'),
+        ('¿Puedo seguir trabajando en Revit?', 'Sí, con la ventana abierta. Si cambias el modelo, pulsa «Volver a leer».'),
     ],
 }
 
@@ -224,8 +230,8 @@ RENOMBRAR = {
 PLANTILLAS = {
     'carpeta': 'plantillas', 'nombre': 'Plantillas', 'panel': 'Gestión BIM', 'version': 'V.0.6',
     'titulo': 'Plantillas: todas las plantillas de vista en una tabla',
-    'descripcion': 'Cómo usar NuHub Plantillas en Revit: edita, crea, copia V/G y asigna plantillas de vista en bloque.',
-    'entrada': 'Plantillas reúne las plantillas de vista del modelo: sus propiedades, qué vistas las usan y su visibilidad y gráficos (V/G). Puedes crearlas, copiar V/G de una a otras, asignarlas y borrar las que no se usan.',
+    'descripcion': 'Cómo usar NuHub Plantillas en Revit: edita, crea, compara, copia V/G y asigna plantillas de vista en bloque, con una biblioteca de oficina.',
+    'entrada': 'Plantillas reúne las plantillas de vista del modelo: sus propiedades, qué vistas las usan y su visibilidad y gráficos (V/G). Puedes crearlas, compararlas, copiar V/G de una a otras, asignarlas, borrar las que no se usan y guardar las estándar de tu oficina.',
     'encaja_texto': 'Ayuda a cumplir las reglas de vistas del BEP que revisa el Auditor.',
     'encaja': [{'t': 'Plantillas', 'aqui': True}, {'flecha': '→ vistas consistentes →'}, {'t': 'Exportadores'}],
     'ficha': [('Dónde está', 'Pestaña NuHub → panel Gestión BIM → ' + B('Plantillas')),
@@ -236,7 +242,8 @@ PLANTILLAS = {
     'flujo': [N('abrir', 'Abrir el modelo', 'y Plantillas', 'NuHub → Gestión BIM'),
               N('plantilla', 'Revisar las', 'plantillas', 'Propiedades y vistas'),
               N('capas', 'Editar el V/G', None, 'Doble clic en el nombre'),
-              N('comparar', 'Copiar V/G', 'a otras', 'A las marcadas', uso=True),
+              N('comparar', 'Comparar', 'dos plantillas', 'Lado a lado · diferencias'),
+              N('capas', 'Copiar V/G', 'a otras', 'A las marcadas', uso=True),
               N('lista', 'Asignar a', 'las vistas', 'Pestaña Vistas asociadas'),
               N('limpiar', 'Eliminar las', 'sin uso', 'Marcar sin uso'),
               N('play', 'Aplicar cambios', 'al modelo', 'Todo junto', uso=True)],
@@ -244,6 +251,9 @@ PLANTILLAS = {
         {'t': 'Abre Plantillas', 'html': '<p>Pulsa ' + B('Plantillas') + '. A la izquierda, los tipos de vista; a la derecha, las plantillas con sus propiedades.</p>'},
         {'t': 'Revisa las plantillas', 'html': '<p>Cada fila muestra las propiedades que controla la plantilla, su nombre nuevo y cuántas vistas la usan. ' + B('Nueva plantilla') + ' duplica una existente o la crea desde una vista.</p>'},
         {'t': 'Edita el V/G', 'html': '<p>Doble clic en el nombre abre el V/G completo: categorías de modelo, anotación, analíticas, importadas, filtros, vínculos y worksets. ' + B('Modificar gráficos…') + ' cambia líneas, patrones, transparencia y medio tono.</p>', 'destacar': True},
+        {'t': 'Compara dos plantillas', 'html': '<p>Marca (✓) dos plantillas y pulsa ' + B('Comparar') + ': se abren lado a lado con sus propiedades, el V/G de categorías y filtros, worksets y vínculos. <b>Amarillo</b> es distinto y <b>azul</b> es lo que solo tiene una. Usa ' + B('Solo diferencias') + ', el buscador o ' + B('Exportar a Excel') + '. Comparar solo lee el modelo.</p>'},
+        {'t': 'Usa las plantillas de oficina', 'html': '<p>' + B('Oficina') + ' es la biblioteca de plantillas estándar de tu oficina, aparte de las configuraciones y sin límite. Agrega las marcadas del modelo, cárgalas en otro modelo (crea las que falten) o compáralas con la del modelo.</p>'
+            '<p>Con ' + B('Cambiar carpeta…') + ' la biblioteca puede estar en una carpeta compartida (red u OneDrive) para que todo el equipo use las mismas.</p>'},
         {'t': 'Copia el V/G a otras', 'html': '<p>' + B('Copiar V/G a marcadas') + ': eliges qué copiar (categorías, filtros, worksets) y a qué plantillas.</p>', 'uso': 'Gasta 1 uso de la licencia'},
         {'t': 'Asígnalas a las vistas', 'html': '<p>En ' + B('Vistas asociadas') + ' ves la plantilla actual de cada vista y eliges la nueva, o ' + B('Asignar plantilla a marcadas') + '.</p>'},
         {'t': 'Elimina las sin uso', 'html': '<p>' + B('Marcar sin uso') + ' y ' + B('Eliminar marcadas') + ' para quitar plantillas que ninguna vista usa.</p>'},
@@ -259,6 +269,9 @@ PLANTILLAS = {
         {'t': 'Asignar en bloque', 'quien': 'Modelador · 80 vistas nuevas',
          'pasos': ['Vistas asociadas, filtra por tipo «Planta».', 'Asigna la plantilla del estándar a todas.'],
          'resultado': '80 vistas con la plantilla correcta en un paso.'},
+        {'t': 'El estándar de la oficina en cada proyecto', 'quien': 'BIM manager · oficina con varios proyectos',
+         'pasos': ['Pone la biblioteca de Oficina en una carpeta compartida.', 'En el modelo de referencia, agrega las plantillas estándar.', 'En cada proyecto nuevo: «Cargar en el modelo» y «Aplicar cambios al modelo».'],
+         'resultado': 'todos los proyectos arrancan con las mismas plantillas, y «Comparar» muestra en qué se apartó cada uno.'},
     ],
     'tabla': {'t': 'Qué significa cada estado', 'bajada': 'Antes de aplicar, la tabla marca cada cambio.',
               'cols': ['Estado', 'Significa'],
@@ -267,7 +280,7 @@ PLANTILLAS = {
                         ['<span class="estado pendiente">Se eliminará</span>', 'Marcada para eliminar al aplicar.'],
                         ['<span class="estado noaplica">No controla esa propiedad</span>', 'La plantilla no incluye esa propiedad.']]},
     'preguntas': [
-        ('¿Qué gasta un uso?', 'Aplicar cambios al modelo, crear una plantilla nueva o copiar V/G a otras plantillas: cada uno cuenta un uso.'),
+        ('¿Qué gasta un uso?', 'Aplicar cambios al modelo, crear una plantilla nueva (también al cargar de Oficina las que faltan) o copiar V/G a otras plantillas: cada uno cuenta un uso. Comparar no gasta usos.'),
         ('¿Puedo guardar el V/G para otro proyecto?', 'Sí: en la ventana del V/G, «Guardar V/G» y luego «Cargarle configuraciones de V/G» en el otro modelo.'),
     ],
 }
@@ -331,7 +344,7 @@ EXPORTADORES = {
     'ficha': [('Dónde está', 'Pestaña NuHub → panel Gestión BIM → ' + B('Exportadores')),
               ('Necesita', 'El modelo con planos, vistas o tablas'),
               ('Gasta un uso', 'Por cada archivo exportado'),
-              ('Entrega', 'Archivos en las carpetas de salida e informe en Excel')],
+              ('Entrega', 'Archivos en las carpetas de salida, listado de entrega (transmittal) en PDF e informe en Excel')],
     'aria': 'Proceso de Exportadores: abrir, elegir planos, vistas o tablas, armar la nomenclatura, elegir formatos, configurar, elegir carpetas y exportar.',
     'flujo': [N('abrir', 'Abrir el modelo', 'y Exportadores', 'NuHub → Gestión BIM'),
               N('lista', 'Elegir qué', 'exportar', 'Planos · vistas · tablas'),
@@ -344,13 +357,14 @@ EXPORTADORES = {
         {'t': 'Elige qué exportar', 'html': '<p>Marca planos o vistas; filtra y usa los ' + B('Publish Settings del modelo') + ' (conjuntos de planos). Guarda la selección en ' + B('Configuraciones de selección') + '.</p>'},
         {'t': 'Arma la nomenclatura', 'html': '<p>' + B('Nomenclatura para DWG y PDF por metadatos') + ': eliges qué datos del plano forman el nombre, el separador y un consecutivo, con ' + B('Vista previa') + ' antes de aplicar.</p>', 'destacar': True},
         {'t': 'Formatos y configuración', 'html': '<p>' + B('Configurar PDF') + ': papel, color, combinar en un solo PDF. ' + B('Configurar CAD') + ': capas, colores, unidades y versión de AutoCAD. NWC e IFC: sus opciones nativas. Tablas: CSV o Excel. Todo se guarda como plantilla (máx. 5).</p>'},
-        {'t': 'Carpetas de salida', 'html': '<p>Una carpeta por formato, y la opción de abrirla al terminar.</p>'},
+        {'t': 'Carpetas de salida', 'html': '<p>Una carpeta por formato, y la opción de abrirla al terminar.</p>'
+            '<p>Con ' + B('Listado de entrega (transmittal) en PDF') + ' marcado (viene marcado), al terminar sale un PDF con los datos del proyecto, el resumen por formato, la tabla de documentos con su revisión vigente y las casillas «Entregó» y «Recibió». No cuenta como documento de la licencia.</p>'},
         {'t': 'Exporta', 'html': '<p>' + B('Exportar') + ' o ' + B('Exportar todo') + ', con progreso y tiempo restante. ' + B('Exportar informe a Excel') + ' deja constancia de lo exportado.</p>', 'uso': 'Gasta 1 uso por cada archivo exportado'},
     ],
     'ejemplos': [
         {'t': 'Entrega al cliente en PDF y DWG', 'quien': 'Coordinador de planos · entrega de fase',
          'pasos': ['Marca los 60 planos de la fase.', 'Nomenclatura: código-disciplina-número-revisión.', 'PDF y DWG con la plantilla del cliente y «Exportar todo».'],
-         'resultado': '120 archivos con el nombre que pide el cliente, en sus carpetas.'},
+         'resultado': '120 archivos con el nombre que pide el cliente, en sus carpetas, y el transmittal en PDF para que lo firme quien recibe.'},
         {'t': 'NWC e IFC para coordinación', 'quien': 'Coordinador BIM · reunión de coordinación',
          'pasos': ['Pestaña NWC: vista 3D de coordinación, coordenadas compartidas.', 'IFC con el archivo de clases por categoría.'],
          'resultado': 'los archivos de coordinación listos con la misma configuración cada semana.'},
@@ -366,7 +380,7 @@ EXPORTADORES = {
                         ['IFC', 'El modelo o vistas 3D, con clases por categoría.'],
                         ['CSV · Excel', 'Tablas de planificación.']]},
     'preguntas': [
-        ('¿Qué gasta un uso?', 'Cada archivo exportado: 10 planos en PDF y DWG son 20 usos. Configurar y la vista previa no gastan usos.'),
+        ('¿Qué gasta un uso?', 'Cada archivo exportado: 10 planos en PDF y DWG son 20 usos. Configurar, la vista previa y el listado de entrega (transmittal) no gastan usos.'),
         ('¿Necesito algo para NWC?', 'El exportador de Navisworks (NWC Export Utility) instalado para tu versión de Revit.'),
     ],
 }
@@ -374,23 +388,27 @@ EXPORTADORES = {
 CUENTA = {
     'carpeta': 'cuenta', 'nombre': 'Cuenta NuHub', 'panel': 'NuHub', 'version': 'V.0.3', 'gasta': False,
     'titulo': 'Cuenta NuHub: tu cuenta, tus plugins y soporte',
-    'descripcion': 'Cómo usar Cuenta NuHub: inicia sesión para todos los plugins, revisa plan, usos y vencimiento, y envía PQR a soporte.',
-    'entrada': 'Una sola cuenta para todos los plugins NuHub. Aquí inicias o cierras sesión, ves el plan, los usos y el vencimiento de cada plugin, y escribes a soporte con un PQR, incluso con capturas.',
+    'descripcion': 'Cómo usar Cuenta NuHub: crea tu cuenta, inicia sesión para todos los plugins, revisa plan, usos, vencimiento y actualizaciones, y envía PQR a soporte.',
+    'entrada': 'Una sola cuenta para todos los plugins NuHub y todas tus versiones de Revit. Aquí creas la cuenta, inicias o cierras sesión, ves el plan, los usos, el vencimiento y si hay una versión nueva de cada plugin, y escribes a soporte con un PQR, incluso con capturas.',
     'encaja_texto': 'Iniciar sesión aquí deja conectados todos los plugins. No gasta usos.',
     'encaja': [{'t': 'Cuenta NuHub', 'aqui': True}, {'flecha': '→ sesión →'}, {'t': 'Los 12 plugins'}],
     'ficha': [('Dónde está', 'Pestaña NuHub → panel NuHub → ' + B('Cuenta')),
-              ('Necesita', 'Tu correo y contraseña de NuHub, e internet'),
+              ('Necesita', 'Un correo e internet; la cuenta la creas tú mismo'),
               ('Gasta un uso', 'Nunca'),
               ('Entrega', 'Sesión para todos los plugins y respuestas de soporte')],
-    'aria': 'Proceso de Cuenta NuHub: iniciar sesión, revisar los plugins, enviar un PQR, recibir el aviso de respuesta y leerla.',
-    'flujo': [N('usuario', 'Iniciar', 'sesión', 'Vale para todos'),
-              N('grafico', 'Ver mis', 'plugins', 'Plan · usos · vence'),
+    'aria': 'Proceso de Cuenta NuHub: crear la cuenta, iniciar sesión, revisar los plugins y sus actualizaciones, enviar un PQR, recibir el aviso de respuesta y leerla.',
+    'flujo': [N('usuario', 'Crear la', 'cuenta', 'Código al correo · prueba gratis'),
+              N('usuario', 'Iniciar', 'sesión', 'Vale para todos'),
+              N('grafico', 'Ver mis', 'plugins', 'Plan · usos · vence · actualización'),
               N('mensaje', 'Enviar', 'un PQR', 'Con hasta 3 imágenes'),
               N('enviar', 'Soporte', 'responde', 'Aviso en Revit y correo'),
               N('lista', 'Leer en', 'Mis PQR', 'Respuesta de soporte')],
     'pasos': [
-        {'t': 'Inicia sesión', 'html': '<p>En ' + B('1 · Mi cuenta') + ', ' + B('Iniciar sesión') + ' con tu correo y contraseña. La sesión es la misma para todos los plugins y solo puede estar abierta en <b>un equipo a la vez</b>: si entras en otro computador, la sesión del primero se cierra.</p>', 'destacar': True},
-        {'t': 'Revisa tus plugins', 'html': '<p>' + B('2 · Mis plugins') + ' muestra cada plugin con su plan, usos hechos y disponibles, vencimiento y si está instalado en este equipo.</p>'},
+        {'t': 'Crea tu cuenta', 'html': '<p>En la ventana de inicio de sesión, ' + B('Crear cuenta') + ': escribe tu nombre, tu correo y una contraseña. Te llega un código al correo; al escribirlo, la cuenta queda creada con un período de prueba gratis de los 12 plugins.</p>'
+            '<p>Si olvidas la contraseña, ' + B('¿Olvidó su contraseña?') + ' te envía un código para crear una nueva. Con la sesión abierta, ' + B('Cambiar la contraseña') + ' en ' + B('1 · Mi cuenta') + '.</p>'},
+        {'t': 'Inicia sesión', 'html': '<p>En ' + B('1 · Mi cuenta') + ', ' + B('Iniciar sesión') + ' con tu correo y contraseña. La sesión es la misma para todos los plugins y solo puede estar abierta en <b>un equipo a la vez</b>: si entras en otro computador, la sesión del primero se cierra. En el mismo computador vale para Revit 2024, 2025 y 2026 a la vez.</p>', 'destacar': True},
+        {'t': 'Revisa tus plugins', 'html': '<p>' + B('2 · Mis plugins') + ' muestra cada plugin con su plan, usos hechos y disponibles, vencimiento y si está instalado en este equipo.</p>'
+            '<p>La columna <b>Actualización</b> dice «Al día» o muestra el botón ' + B('Actualizar a V.x') + ', que abre la página de descarga. Además, al abrir un plugin con versión nueva, NuHub pregunta «¿Desea actualizar a la nueva versión?»; con ' + B('Más tarde') + ' no vuelve a preguntar en 3 días. Cierra Revit antes de instalar.</p>'},
         {'t': 'Envía un PQR', 'html': '<p>' + B('3 · PQR') + ': tipo, plugin, asunto y descripción (qué pasó, qué esperabas, cómo repetirlo). ' + B('Agregar imagen') + ' o ' + B('Pegar captura') + ' (Ctrl+V), hasta 3 imágenes. ' + B('Enviar PQR') + ' te da un número de radicado.</p>'},
         {'t': 'Soporte responde', 'html': '<p>Cuando soporte responde, te llega al correo y Revit te avisa con una ventana: «Tiene una respuesta de soporte NuHub». El botón de la cinta muestra «Cuenta (1)».</p>'},
         {'t': 'Lee la respuesta', 'html': '<p>' + B('4 · Mis PQR') + ' lista tus PQR con su estado. Haz clic en uno para leer la respuesta.</p>'},
@@ -405,6 +423,9 @@ CUENTA = {
         {'t': 'Revisar antes de una entrega', 'quien': 'Coordinador · usa la prueba de 14 días',
          'pasos': ['En Mis plugins ve que le quedan 2 auditorías.', 'Decide comprar el plan anual antes de la entrega.'],
          'resultado': 'no se queda sin usos en el peor momento.'},
+        {'t': 'Instalar una versión nueva', 'quien': 'Modelador · al abrir el Auditor sale «¿Desea actualizar?»',
+         'pasos': ['Pulsa «Actualizar»: se abre la página de descarga.', 'Cierra Revit e instala la versión nueva.', 'En Mis plugins, el Auditor ya dice «Al día».'],
+         'resultado': 'tiene las mejoras nuevas sin buscar nada por su cuenta.'},
     ],
     'tabla': {'t': 'Estados de un PQR', 'bajada': 'Así avanza tu solicitud.',
               'cols': ['Estado', 'Significa'],
@@ -415,7 +436,8 @@ CUENTA = {
     'preguntas': [
         ('¿Puedo trabajar sin internet?', 'No. Los plugins validan la licencia al abrir y antes de cada acción que gasta un uso.'),
         ('¿Por qué se cerró mi sesión?', 'Porque iniciaste sesión en otro computador: la cuenta solo puede estar abierta en un equipo a la vez.'),
-        ('¿Cuántas veces puedo cambiar de equipo?', 'Hay un límite de cambios de equipo por mes. Si lo necesitas, escribe a soporte por PQR.'),
+        ('¿Cuántas veces puedo cambiar de equipo?', 'Hasta 2 veces al mes. Abrir Revit 2024, 2025 o 2026 en el mismo computador no cuenta como cambio. Si necesitas más, escribe a soporte por PQR.'),
+        ('¿Cómo me entero de una versión nueva?', 'Al abrir el plugin te pregunta «¿Desea actualizar a la nueva versión?», y en Mis plugins sale el botón «Actualizar a V.x». También pueden salir avisos generales de NuHub, una sola vez.'),
     ],
 }
 
