@@ -181,7 +181,7 @@ EDITAR = {
 }
 
 RENOMBRAR = {
-    'carpeta': 'renombrar', 'nombre': 'Renombrar', 'panel': 'Gestión BIM', 'version': 'V.0.14',
+    'carpeta': 'renombrar', 'nombre': 'Renombrar', 'panel': 'Gestión BIM', 'gasta': False, 'version': 'V.0.14',
     'titulo': 'Renombrar: nombres según el estándar, en bloque',
     'descripcion': 'Cómo usar NuHub Renombrar en Revit: renombra familias, tipos, vistas, archivos CAD y worksets en una tabla o desde Excel.',
     'entrada': 'Renombrar pone en tablas los nombres de familias, tipos, vistas, archivos CAD y worksets. Escribes el nombre nuevo, el plugin te avisa si se repite o no es válido, y aplicas todo de una vez.',
@@ -189,19 +189,19 @@ RENOMBRAR = {
     'encaja': [{'t': 'Auditor'}, {'flecha': '→ nomenclatura →'}, {'t': 'Renombrar', 'aqui': True}, {'flecha': '→ nombres del estándar'}],
     'ficha': [('Dónde está', 'Pestaña NuHub → panel Gestión BIM → ' + B('Renombrar')),
               ('Necesita', 'El modelo abierto y el estándar de nombres del proyecto'),
-              ('Gasta un uso', 'Cada vez que pulsas ' + B('Aplicar cambios al modelo')),
+              ('Precio', 'Gratis con tu cuenta NuHub · sin límite de usos'),
               ('Entrega', 'Nombres actualizados en el modelo (y en disco, para CAD si lo pides)')],
     'aria': 'Proceso de Renombrar: abrir, elegir la pestaña, escribir los nombres nuevos o cargar Excel, revisar los estados y aplicar.',
     'flujo': [N('abrir', 'Abrir el modelo', 'y Renombrar', 'NuHub → Gestión BIM'),
               N('lista', 'Elegir', 'qué renombrar', 'Familias · tipos · vistas · CAD'),
               N('texto', 'Escribir el', 'nombre nuevo', 'O cargar desde Excel'),
               R('¿Repetido o', 'no válido?', ciclo=2, textoCiclo='Sí · corregir el nombre'),
-              N('play', 'Aplicar cambios', 'al modelo', 'Todos a la vez', uso=True)],
+              N('play', 'Aplicar cambios', 'al modelo', 'Todos a la vez', uso='Gratis')],
     'pasos': [
         {'t': 'Abre Renombrar', 'html': '<p>Pulsa ' + B('Renombrar') + '. Lee el modelo con una barra de progreso.</p>'},
         {'t': 'Elige qué renombrar', 'html': '<p>Pestañas: <b>Family Name</b>, <b>Type Name</b>, <b>Vistas</b> (con plano, plantilla y hasta 4 parámetros), <b>Archivos CAD</b> y <b>Worksets</b>. Filtra por categoría y guarda la selección en ' + B('Configuraciones (máx. 5)') + '.</p>'},
         {'t': 'Escribe los nombres nuevos', 'html': '<p>En la columna del nombre nuevo, o ' + B('Exportar a Excel') + ', arma los nombres allá con fórmulas y vuelve con ' + B('Cargar Excel') + '. El plugin te dice qué caracteres no se permiten.</p>', 'destacar': True},
-        {'t': 'Aplica al modelo', 'html': '<p>Cuando no queda nada en rojo, ' + B('Aplicar cambios al modelo') + '. En CAD puedes marcar ' + B('Renombrar también el archivo en el disco') + '.</p>', 'uso': 'Gasta 1 uso de la licencia'},
+        {'t': 'Aplica al modelo', 'html': '<p>Cuando no queda nada en rojo, ' + B('Aplicar cambios al modelo') + '. En CAD puedes marcar ' + B('Renombrar también el archivo en el disco') + '.</p>', 'uso': 'Gratis · sin límite'},
     ],
     'ejemplos': [
         {'t': 'Tipos con el estándar del cliente', 'quien': 'Modelador · el Auditor marcó 140 tipos fuera de nomenclatura',
@@ -221,14 +221,14 @@ RENOMBRAR = {
                         ['Type Name también en otra familia', 'Aviso: el mismo nombre existe en otra familia (Revit lo permite).'],
                         ['<span class="estado noaplica">Familia de sistema</span>', 'Revit no deja renombrarla.']]},
     'preguntas': [
-        ('¿Qué gasta un uso?', 'Cada vez que pulsas «Aplicar cambios al modelo». Editar en la tabla, exportar y cargar Excel no gasta usos.'),
+        ('¿Tiene límite de usos?', 'No. Renombrar es gratis con tu cuenta NuHub: solo necesitas iniciar sesión en Cuenta NuHub (y tener internet).'),
         ('¿Para qué sirve «Marcar sin colocar»?', 'Marca los tipos que no tienen ejemplares en el modelo, para revisarlos o limpiarlos.'),
         ('¿Puedo ver los elementos antes?', 'Sí: «Crear vista 3D» con los marcados, con un sufijo como «Por renombrar».'),
     ],
 }
 
 PLANTILLAS = {
-    'carpeta': 'plantillas', 'nombre': 'Plantillas', 'panel': 'Gestión BIM', 'version': 'V.0.6',
+    'carpeta': 'plantillas', 'nombre': 'Plantillas', 'panel': 'Gestión BIM', 'gasta': False, 'version': 'V.0.6',
     'titulo': 'Plantillas: todas las plantillas de vista en una tabla',
     'descripcion': 'Cómo usar NuHub Plantillas en Revit: edita, crea, compara, copia V/G y asigna plantillas de vista en bloque, con una biblioteca de oficina.',
     'entrada': 'Plantillas reúne las plantillas de vista del modelo: sus propiedades, qué vistas las usan y su visibilidad y gráficos (V/G). Puedes crearlas, compararlas, copiar V/G de una a otras, asignarlas, borrar las que no se usan y guardar las estándar de tu oficina.',
@@ -236,17 +236,17 @@ PLANTILLAS = {
     'encaja': [{'t': 'Plantillas', 'aqui': True}, {'flecha': '→ vistas consistentes →'}, {'t': 'Exportadores'}],
     'ficha': [('Dónde está', 'Pestaña NuHub → panel Gestión BIM → ' + B('Plantillas')),
               ('Necesita', 'El modelo abierto'),
-              ('Gasta un uso', 'Cada aplicación de cambios, plantilla nueva o copia de V/G'),
+              ('Precio', 'Gratis con tu cuenta NuHub · sin límite de usos'),
               ('Entrega', 'Plantillas ordenadas y asignadas en el modelo')],
     'aria': 'Proceso de Plantillas: abrir, revisar las plantillas, editar V/G, copiar V/G a otras, asignar a vistas, limpiar las sin uso y aplicar.',
     'flujo': [N('abrir', 'Abrir el modelo', 'y Plantillas', 'NuHub → Gestión BIM'),
               N('plantilla', 'Revisar las', 'plantillas', 'Propiedades y vistas'),
               N('capas', 'Editar el V/G', None, 'Doble clic en el nombre'),
               N('comparar', 'Comparar', 'dos plantillas', 'Lado a lado · diferencias'),
-              N('capas', 'Copiar V/G', 'a otras', 'A las marcadas', uso=True),
+              N('capas', 'Copiar V/G', 'a otras', 'A las marcadas', uso='Gratis'),
               N('lista', 'Asignar a', 'las vistas', 'Pestaña Vistas asociadas'),
               N('limpiar', 'Eliminar las', 'sin uso', 'Marcar sin uso'),
-              N('play', 'Aplicar cambios', 'al modelo', 'Todo junto', uso=True)],
+              N('play', 'Aplicar cambios', 'al modelo', 'Todo junto', uso='Gratis')],
     'pasos': [
         {'t': 'Abre Plantillas', 'html': '<p>Pulsa ' + B('Plantillas') + '. A la izquierda, los tipos de vista; a la derecha, las plantillas con sus propiedades.</p>'},
         {'t': 'Revisa las plantillas', 'html': '<p>Cada fila muestra las propiedades que controla la plantilla, su nombre nuevo y cuántas vistas la usan. ' + B('Nueva plantilla') + ' duplica una existente o la crea desde una vista.</p>'},
@@ -254,10 +254,10 @@ PLANTILLAS = {
         {'t': 'Compara dos plantillas', 'html': '<p>Marca (✓) dos plantillas y pulsa ' + B('Comparar') + ': se abren lado a lado con sus propiedades, el V/G de categorías y filtros, worksets y vínculos. <b>Amarillo</b> es distinto y <b>azul</b> es lo que solo tiene una. Usa ' + B('Solo diferencias') + ', el buscador o ' + B('Exportar a Excel') + '. Comparar solo lee el modelo.</p>'},
         {'t': 'Usa las plantillas de oficina', 'html': '<p>' + B('Oficina') + ' es la biblioteca de plantillas estándar de tu oficina, aparte de las configuraciones y sin límite. Agrega las marcadas del modelo, cárgalas en otro modelo (crea las que falten) o compáralas con la del modelo.</p>'
             '<p>Con ' + B('Cambiar carpeta…') + ' la biblioteca puede estar en una carpeta compartida (red u OneDrive) para que todo el equipo use las mismas.</p>'},
-        {'t': 'Copia el V/G a otras', 'html': '<p>' + B('Copiar V/G a marcadas') + ': eliges qué copiar (categorías, filtros, worksets) y a qué plantillas.</p>', 'uso': 'Gasta 1 uso de la licencia'},
+        {'t': 'Copia el V/G a otras', 'html': '<p>' + B('Copiar V/G a marcadas') + ': eliges qué copiar (categorías, filtros, worksets) y a qué plantillas.</p>', 'uso': 'Gratis · sin límite'},
         {'t': 'Asígnalas a las vistas', 'html': '<p>En ' + B('Vistas asociadas') + ' ves la plantilla actual de cada vista y eliges la nueva, o ' + B('Asignar plantilla a marcadas') + '.</p>'},
         {'t': 'Elimina las sin uso', 'html': '<p>' + B('Marcar sin uso') + ' y ' + B('Eliminar marcadas') + ' para quitar plantillas que ninguna vista usa.</p>'},
-        {'t': 'Aplica al modelo', 'html': '<p>' + B('Aplicar cambios al modelo') + ' escribe nombres, propiedades, asignaciones y eliminaciones. ' + B('Exportar a Excel') + ' y ' + B('Cargar Excel') + ' sirven para trabajar la tabla afuera.</p>', 'uso': 'Gasta 1 uso de la licencia'},
+        {'t': 'Aplica al modelo', 'html': '<p>' + B('Aplicar cambios al modelo') + ' escribe nombres, propiedades, asignaciones y eliminaciones. ' + B('Exportar a Excel') + ' y ' + B('Cargar Excel') + ' sirven para trabajar la tabla afuera.</p>', 'uso': 'Gratis · sin límite'},
     ],
     'ejemplos': [
         {'t': 'Unificar las plantillas de planta', 'quien': 'Coordinador · 15 plantillas de planta distintas',
@@ -280,13 +280,13 @@ PLANTILLAS = {
                         ['<span class="estado pendiente">Se eliminará</span>', 'Marcada para eliminar al aplicar.'],
                         ['<span class="estado noaplica">No controla esa propiedad</span>', 'La plantilla no incluye esa propiedad.']]},
     'preguntas': [
-        ('¿Qué gasta un uso?', 'Aplicar cambios al modelo, crear una plantilla nueva (también al cargar de Oficina las que faltan) o copiar V/G a otras plantillas: cada uno cuenta un uso. Comparar no gasta usos.'),
+        ('¿Tiene límite de usos?', 'No. Plantillas es gratis con tu cuenta NuHub: solo necesitas iniciar sesión en Cuenta NuHub (y tener internet).'),
         ('¿Puedo guardar el V/G para otro proyecto?', 'Sí: en la ventana del V/G, «Guardar V/G» y luego «Cargarle configuraciones de V/G» en el otro modelo.'),
     ],
 }
 
 PARAMETROS = {
-    'carpeta': 'parametros', 'nombre': 'Parámetros', 'panel': 'Gestión BIM', 'version': 'V.0.18',
+    'carpeta': 'parametros', 'nombre': 'Parámetros', 'panel': 'Gestión BIM', 'gasta': False, 'version': 'V.0.18',
     'titulo': 'Parámetros: crear, ordenar y limpiar parámetros',
     'descripcion': 'Cómo usar NuHub Parámetros en Revit: crea parámetros compartidos y de proyecto desde una tabla o Excel, y limpia duplicados.',
     'entrada': 'Parámetros tiene tres pestañas: ver y limpiar los parámetros del modelo (incluidos los duplicados), crear parámetros compartidos en el archivo TXT y crear parámetros de proyecto, todo desde una tabla o desde Excel.',
@@ -294,24 +294,24 @@ PARAMETROS = {
     'encaja': [{'t': 'Parámetros', 'aqui': True}, {'flecha': '→ parámetros listos →'}, {'t': 'Cantidades · LOIN · Editar Información'}],
     'ficha': [('Dónde está', 'Pestaña NuHub → panel Gestión BIM → ' + B('Parámetros')),
               ('Necesita', 'El modelo abierto y, para compartidos, el archivo TXT'),
-              ('Gasta un uso', 'Por cada parámetro creado, eliminado o con categorías cambiadas'),
+              ('Precio', 'Gratis con tu cuenta NuHub · sin límite de usos'),
               ('Entrega', 'Parámetros creados en el modelo y en el TXT; Excel del listado')],
     'aria': 'Proceso de Parámetros: abrir, revisar los parámetros del modelo, limpiar duplicados, elegir el archivo TXT, llenar la tabla, ver la vista previa y crear.',
     'flujo': [N('abrir', 'Abrir el modelo', 'y Parámetros', 'NuHub → Gestión BIM'),
               N('lista', 'Ver los del', 'modelo', 'Proyecto y compartidos'),
-              N('limpiar', 'Limpiar', 'duplicados', 'Eliminar marcados', uso='1 uso c/u'),
+              N('limpiar', 'Limpiar', 'duplicados', 'Eliminar marcados', uso='Gratis'),
               N('archivo', 'Elegir el', 'archivo TXT', 'Existente o nuevo'),
               N('excel', 'Llenar la', 'tabla', 'A mano, del TXT o de Excel'),
               N('lupa', 'Vista', 'previa', 'Qué se va a crear'),
-              N('play', 'Crear los', 'parámetros', 'En el modelo y el TXT', uso='1 uso c/u')],
+              N('play', 'Crear los', 'parámetros', 'En el modelo y el TXT', uso='Gratis')],
     'pasos': [
         {'t': 'Abre Parámetros', 'html': '<p>Pulsa ' + B('Parámetros') + '. Tres pestañas: parámetros del modelo, crear compartidos y crear de proyecto.</p>'},
         {'t': 'Revisa los del modelo', 'html': '<p>' + B('Parámetros del modelo') + ' lista los de proyecto y compartidos con su grupo, tipo y categorías. ' + B('Exportar a Excel') + ' para documentarlos.</p>'},
-        {'t': 'Limpia duplicados', 'html': '<p>' + B('Solo duplicados') + ' muestra los repetidos; ' + B('Marcar duplicados más recientes') + ' y ' + B('Eliminar marcados') + '. Opcional: quitarlos también del TXT. ' + B('Editar categorías') + ' cambia a qué categorías aplica.</p>', 'uso': '1 uso por parámetro eliminado o cambiado'},
+        {'t': 'Limpia duplicados', 'html': '<p>' + B('Solo duplicados') + ' muestra los repetidos; ' + B('Marcar duplicados más recientes') + ' y ' + B('Eliminar marcados') + '. Opcional: quitarlos también del TXT. ' + B('Editar categorías') + ' cambia a qué categorías aplica.</p>', 'uso': 'Gratis · sin límite'},
         {'t': 'Elige el archivo TXT', 'html': '<p>En ' + B('Crear parámetros compartidos') + ', ' + B('Usar existente...') + ' o ' + B('Crear nuevo...') + ', y el grupo dentro del archivo.</p>', 'destacar': True},
         {'t': 'Llena la tabla', 'html': '<p>Nombre, tipo de dato, grupo, categorías y si es de tipo o de instancia. ' + B('Agregar fila') + ', ' + B('Cargar del TXT') + ' o ' + B('Cargar desde Excel') + ' (hay ' + B('Plantilla de Excel') + ').</p>'},
         {'t': 'Revisa la vista previa', 'html': '<p>' + B('Vista previa') + ' muestra exactamente qué se crea, antes de tocar el modelo.</p>'},
-        {'t': 'Crea los parámetros', 'html': '<p>Se crean en el modelo (y en el TXT si son compartidos). Para parámetros solo de este modelo, usa ' + B('Crear parámetros de proyecto') + '.</p>', 'uso': '1 uso por parámetro creado'},
+        {'t': 'Crea los parámetros', 'html': '<p>Se crean en el modelo (y en el TXT si son compartidos). Para parámetros solo de este modelo, usa ' + B('Crear parámetros de proyecto') + '.</p>', 'uso': 'Gratis · sin límite'},
     ],
     'ejemplos': [
         {'t': 'Parámetros del BEP en un modelo nuevo', 'quien': 'BIM manager · arranque de proyecto',
@@ -329,7 +329,7 @@ PARAMETROS = {
               'filas': [['Compartido (TXT)', 'Cuando el dato se usa en varios modelos, en etiquetas o en tablas de planificación.'],
                         ['De proyecto', 'Cuando el dato solo vive en este modelo.']]},
     'preguntas': [
-        ('¿Qué gasta un uso?', 'Cada parámetro creado, eliminado o con categorías cambiadas cuenta 1. Crear 10 parámetros son 10 usos. Ver, exportar y la vista previa no gastan usos.'),
+        ('¿Tiene límite de usos?', 'No. Parámetros es gratis con tu cuenta NuHub: solo necesitas iniciar sesión en Cuenta NuHub (y tener internet).'),
         ('¿Qué pasa con los datos al eliminar un duplicado?', 'Se pierden los valores guardados en ese parámetro. Revisa antes qué duplicado tiene la información.'),
     ],
 }
@@ -385,13 +385,67 @@ EXPORTADORES = {
     ],
 }
 
+BIBLIOTECAS = {
+    'carpeta': 'bibliotecas', 'nombre': 'Bibliotecas', 'panel': 'Gestión BIM', 'gasta': False, 'version': 'V.0.1',
+    'titulo': 'Bibliotecas: las familias de tu oficina, a un clic',
+    'descripcion': 'Cómo usar NuHub Bibliotecas en Revit: busca familias .rfa en tus carpetas por categoría y Family Name, con vista previa, cárgalas al modelo y exporta el registro de familias a Excel.',
+    'entrada': 'Bibliotecas lee las carpetas de familias de tu oficina (locales, de red u OneDrive) sin abrir cada archivo en Revit. Buscas por nombre, tipo o categoría, ves la miniatura y los tipos, y cargas al modelo solo lo que necesitas. También exporta a Excel el registro de las familias del modelo o de la biblioteca.',
+    'encaja_texto': 'Trae al modelo las familias estándar de la oficina; luego Renombrar y el Auditor revisan sus nombres.',
+    'encaja': [{'t': 'Bibliotecas', 'aqui': True}, {'flecha': '→ familias de la oficina →'}, {'t': 'Modelo'}, {'flecha': '→ registro →'}, {'t': 'Excel'}],
+    'ficha': [('Dónde está', 'Pestaña NuHub → panel Gestión BIM → ' + B('Bibliotecas')),
+              ('Necesita', 'Un modelo o una familia abierta y la carpeta de familias de la oficina'),
+              ('Precio', 'Gratis con tu cuenta NuHub · sin límite de usos'),
+              ('Entrega', 'Familias cargadas en el modelo y registro en Excel (Categoría · Family Name · Type Name)')],
+    'aria': 'Proceso de Bibliotecas: agregar la carpeta de familias, que se indexa sola, buscar por nombre o categoría, ver la vista previa, elegir los tipos, cargar al modelo o cargar y colocar, y exportar el registro a Excel.',
+    'flujo': [N('carpeta', 'Agregar la', 'carpeta', 'Local, red u OneDrive'),
+              N('lote', 'Índice', 'automático', 'Solo lee lo nuevo'),
+              N('lupa', 'Buscar', 'familias', 'Nombre · tipo · categoría'),
+              N('imagen', 'Ver la', 'vista previa', 'Tipos y versión'),
+              N('check', 'Elegir', 'los tipos', 'Todos o solo algunos'),
+              N('play', 'Cargar', 'al modelo', 'O cargar y colocar', uso='Gratis'),
+              N('excel', 'Exportar', 'el registro', 'Categoría · Family · Type')],
+    'pasos': [
+        {'t': 'Agrega la carpeta de familias', 'html': '<p>Pulsa ' + B('Bibliotecas') + ' y luego ' + B('Agregar carpeta') + '. Elige la carpeta de familias de tu oficina (también sirven las de red y OneDrive) y dale un nombre, por ejemplo «Oficina». Puedes agregar varias: «Fabricantes», «Proyecto Torre 80»…</p>'},
+        {'t': 'Se arma el índice', 'html': '<p>Bibliotecas lee cada .rfa <b>sin abrirlo en Revit</b>: categoría, tipos, versión de Revit y miniatura. La primera vez tarda según la cantidad de familias; después solo lee los archivos nuevos o modificados, y lo hace sola cada vez que abres la ventana. Puedes seguir trabajando mientras tanto. ' + B('Actualizar índice') + ' lo repite a mano.</p>', 'destacar': True},
+        {'t': 'Busca y filtra', 'html': '<p>Escribe en el buscador parte del Family Name, de un tipo o de la categoría («puerta 90», «baño»). A la izquierda filtra por carpeta y categoría; arriba por versión de Revit y por ' + B('Favoritas') + ', ' + B('Ya en el modelo') + ', ' + B('No están en el modelo') + ', ' + B('Duplicadas') + ' o ' + B('Sin vista previa') + '. Cambia entre ' + B('Miniaturas') + ' y ' + B('Lista') + '.</p>'},
+        {'t': 'Mira la vista previa', 'html': '<p>Al elegir una familia ves la miniatura grande, la categoría, la versión de Revit en que se guardó, la carpeta y sus tipos. La estrella la marca como favorita. La ficha dice <b>En el modelo</b> si ya está cargada, o <b>Revit 20xx · no carga</b> si es de una versión más nueva que la tuya.</p>'},
+        {'t': 'Carga al modelo', 'html': '<p>Marca los tipos que necesitas y pulsa ' + B('Cargar al modelo') + ' (o doble clic en la ficha). Con varias familias seleccionadas (Ctrl o Mayús + clic) se cargan todas completas. ' + B('Cargar y colocar') + ' carga y deja listo Revit para ubicarla en la vista, como «Componente». Se deshace con Ctrl+Z.</p>', 'uso': 'Gratis · sin límite'},
+        {'t': 'Exporta el registro', 'html': '<p>' + B('Exportar registro') + ' crea un Excel con una fila por tipo: <b>Categoría · Family Name · Type Name</b>. Elige si es de las familias <b>del modelo</b> (con cuántos ejemplares hay y si están colocadas, y si quieres también las de sistema) o de las <b>de la biblioteca</b> que muestra la búsqueda (con versión, ruta y miniatura).</p>'},
+    ],
+    'ejemplos': [
+        {'t': 'Puertas del estándar de la oficina', 'quien': 'Modelador · necesita 3 tipos de puerta del estándar',
+         'pasos': ['Busca «puerta» en la carpeta Oficina y filtra la categoría Puertas.', 'Elige la familia, marca 0.80, 0.90 y 1.00 m y pulsa Cargar y colocar.'],
+         'resultado': 'las puertas correctas en el modelo en segundos, sin buscar en carpetas.'},
+        {'t': 'Registro de familias para la entrega', 'quien': 'Coordinador BIM · el cliente pide el listado de familias usadas',
+         'pasos': ['Exportar registro → Familias del modelo, con ejemplares y colocada.', 'Filtra en Excel las que tienen 0 ejemplares para limpiarlas antes de entregar.'],
+         'resultado': 'el anexo de familias del BEP listo, y el modelo sin familias de sobra.'},
+        {'t': 'Limpiar la biblioteca', 'quien': 'BIM manager · la carpeta de red creció sin control',
+         'pasos': ['Mostrar «Duplicadas» para ver familias con el mismo nombre en dos carpetas.', 'Mostrar «Sin vista previa» y «No se pudieron leer» para revisar las dañadas.', 'Exporta el registro de la biblioteca con la ruta.'],
+         'resultado': 'un inventario de la biblioteca y una lista clara de qué depurar.'},
+    ],
+    'tabla': {'t': 'Lo que te muestra cada ficha', 'bajada': 'Cada familia trae una etiqueta según su estado.',
+              'cols': ['Etiqueta', 'Significa'],
+              'filas': [['<span class="estado corregido">En el modelo</span>', 'Ya está cargada; si la cargas otra vez se reemplaza por la del archivo (los valores de los tipos existentes se conservan).'],
+                        ['<span class="estado pendiente">Revit 20xx · no carga</span>', 'Se guardó en una versión más nueva que tu Revit: Revit no puede cargarla.'],
+                        ['★', 'Favorita: la encuentras rápido con «Mostrar: Favoritas».'],
+                        ['Sin vista previa', 'La familia no guardó miniatura (familias viejas). Igual se puede cargar.'],
+                        ['Sin categoría', 'La familia no guardó su categoría en el archivo; se sabe al cargarla.']]},
+    'preguntas': [
+        ('¿Tiene límite de usos?', 'No. Bibliotecas es gratis con tu cuenta NuHub: buscar, ver, cargar y exportar no tienen límite. Solo necesitas iniciar sesión en Cuenta NuHub.'),
+        ('¿Abre cada familia en Revit para leerla?', 'No. Lee la información que el .rfa guarda adentro (categoría, tipos, versión y miniatura), por eso es rápido aun en carpetas de red con miles de familias. Las miniaturas quedan en tu equipo.'),
+        ('¿Sirven las familias de versiones anteriores?', 'Sí: Revit las actualiza al cargarlas (el panel te avisa). Las de una versión más nueva que tu Revit no se pueden cargar.'),
+        ('¿Y las familias con catálogo de tipos (.txt)?', 'Bibliotecas lee el catálogo y te deja marcar solo los tipos que necesitas; se cargan de a una familia.'),
+        ('¿Se modifica algo en mis carpetas?', 'No. Solo lee los archivos; quitar una carpeta de la lista no borra nada.'),
+    ],
+}
+
 CUENTA = {
     'carpeta': 'cuenta', 'nombre': 'Cuenta NuHub', 'panel': 'NuHub', 'version': 'V.0.3', 'gasta': False,
     'titulo': 'Cuenta NuHub: tu cuenta, tus plugins y soporte',
     'descripcion': 'Cómo usar Cuenta NuHub: crea tu cuenta, inicia sesión para todos los plugins, revisa plan, usos, vencimiento y actualizaciones, y envía PQR a soporte.',
     'entrada': 'Una sola cuenta para todos los plugins NuHub y todas tus versiones de Revit. Aquí creas la cuenta, inicias o cierras sesión, ves el plan, los usos, el vencimiento y si hay una versión nueva de cada plugin, y escribes a soporte con un PQR, incluso con capturas.',
     'encaja_texto': 'Iniciar sesión aquí deja conectados todos los plugins. No gasta usos.',
-    'encaja': [{'t': 'Cuenta NuHub', 'aqui': True}, {'flecha': '→ sesión →'}, {'t': 'Los 12 plugins'}],
+    'encaja': [{'t': 'Cuenta NuHub', 'aqui': True}, {'flecha': '→ sesión →'}, {'t': 'Los 13 plugins'}],
     'ficha': [('Dónde está', 'Pestaña NuHub → panel NuHub → ' + B('Cuenta')),
               ('Necesita', 'Un correo e internet; la cuenta la creas tú mismo'),
               ('Gasta un uso', 'Nunca'),
@@ -404,7 +458,7 @@ CUENTA = {
               N('enviar', 'Soporte', 'responde', 'Aviso en Revit y correo'),
               N('lista', 'Leer en', 'Mis PQR', 'Respuesta de soporte')],
     'pasos': [
-        {'t': 'Crea tu cuenta', 'html': '<p>En la ventana de inicio de sesión, ' + B('Crear cuenta') + ': escribe tu nombre, tu correo y una contraseña. Te llega un código al correo; al escribirlo, la cuenta queda creada con un período de prueba gratis de los 12 plugins.</p>'
+        {'t': 'Crea tu cuenta', 'html': '<p>En la ventana de inicio de sesión, ' + B('Crear cuenta') + ': escribe tu nombre, tu correo y una contraseña. Te llega un código al correo; al escribirlo, la cuenta queda creada con un período de prueba gratis de los plugins de pago. Renombrar, Parámetros, Plantillas y Bibliotecas son <b>gratis siempre</b>, sin límite de usos.</p>'
             '<p>Si olvidas la contraseña, ' + B('¿Olvidó su contraseña?') + ' te envía un código para crear una nueva. Con la sesión abierta, ' + B('Cambiar la contraseña') + ' en ' + B('1 · Mi cuenta') + '.</p>'},
         {'t': 'Inicia sesión', 'html': '<p>En ' + B('1 · Mi cuenta') + ', ' + B('Iniciar sesión') + ' con tu correo y contraseña. La sesión es la misma para todos los plugins y solo puede estar abierta en <b>un equipo a la vez</b>: si entras en otro computador, la sesión del primero se cierra. En el mismo computador vale para Revit 2024, 2025 y 2026 a la vez.</p>', 'destacar': True},
         {'t': 'Revisa tus plugins', 'html': '<p>' + B('2 · Mis plugins') + ' muestra cada plugin con su plan, usos hechos y disponibles, vencimiento y si está instalado en este equipo.</p>'
@@ -441,4 +495,4 @@ CUENTA = {
     ],
 }
 
-PAGINAS = [COLISIONES, REVISOR, EDITAR, RENOMBRAR, PLANTILLAS, PARAMETROS, EXPORTADORES, CUENTA]
+PAGINAS = [COLISIONES, REVISOR, EDITAR, RENOMBRAR, PLANTILLAS, PARAMETROS, BIBLIOTECAS, EXPORTADORES, CUENTA]

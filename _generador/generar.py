@@ -13,14 +13,14 @@ for d in todas:
 
 por = {d['carpeta']: d for d in todas}
 GRUPOS = [('Calidad BIM', ['auditor', 'cantidades', 'matriz-loin']),
-          ('Gestión BIM', ['colisiones', 'revisor', 'editar-informacion', 'renombrar', 'plantillas', 'parametros', 'exportadores']),
+          ('Gestión BIM', ['colisiones', 'revisor', 'editar-informacion', 'renombrar', 'plantillas', 'parametros', 'bibliotecas', 'exportadores']),
           ('Externos', ['validador', 'externos']),
           ('Tu cuenta', ['cuenta'])]
 RESUMEN = {'auditor': 'Audita el modelo con las reglas del BEP.', 'cantidades': 'Cantidades del modelo a Excel y PDF.',
            'matriz-loin': 'Revisa la información que exige el proyecto por elemento.', 'colisiones': 'Detecta y sigue interferencias entre disciplinas.',
            'revisor': 'Lleva los «No cumple» del Auditor al modelo y sigue las correcciones.', 'editar-informacion': 'Edita parámetros de muchos elementos a la vez.',
-           'renombrar': 'Renombra familias, tipos, vistas, CAD y worksets.', 'plantillas': 'Ordena, compara, copia y asigna plantillas de vista.',
-           'parametros': 'Crea parámetros y limpia duplicados.', 'exportadores': 'Exporta planos, vistas y tablas por lotes.',
+           'renombrar': 'Gratis · Renombra familias, tipos, vistas, CAD y worksets.', 'plantillas': 'Gratis · Ordena, compara, copia y asigna plantillas de vista.',
+           'parametros': 'Gratis · Crea parámetros y limpia duplicados.', 'bibliotecas': 'Gratis · Busca familias .rfa de tus carpetas con vista previa y cárgalas al modelo.', 'exportadores': 'Exporta planos, vistas y tablas por lotes.',
            'validador': 'Compara entregas: auditoría, cantidades, LOIN y colisiones.', 'externos': 'Procesa hasta 30 modelos por lote, también planos en PDF y DWG.',
            'cuenta': 'Tu cuenta, plan, usos, actualizaciones y PQR a soporte.'}
 secciones = ''.join(
