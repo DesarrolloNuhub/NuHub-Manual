@@ -49,7 +49,7 @@ def pagina(d):
 <main>
   <div class="arriba">
   <header>
-    <div class="panel">{d["panel"]} · {d["nombre"]}</div>
+    <div class="panel">{d["panel"]} · {d["nombre"]}{' <em class="sello">★ Gratis</em>' if d.get("gratis") else ''}</div>
     <h1>{d["titulo"]}</h1>
     <p class="entrada">{d["entrada"]}</p>
   </header>

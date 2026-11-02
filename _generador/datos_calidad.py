@@ -10,7 +10,7 @@ def R(l1, l2, no=None, ciclo=None, textoCiclo=None):
 USO = '<span class="uso">Gasta 1 uso de la licencia</span>'
 
 AUDITOR = {
-    'carpeta': 'auditor', 'nombre': 'Auditor', 'panel': 'Calidad BIM', 'version': 'V.0.13',
+    'carpeta': 'auditor', 'nombre': 'Auditor', 'panel': 'Calidad BIM', 'version': 'V.0.1.0',
     'titulo': 'Auditor: el modelo frente al BEP',
     'descripcion': 'Cómo usar NuHub Auditor en Revit: audita el modelo con las reglas del BEP, muestra el cumplimiento y genera los informes.',
     'entrada': 'El Auditor revisa el modelo con las reglas del BEP del proyecto, en tres grupos: Generalidades, Modelos y Planos. Te da el porcentaje de cumplimiento, lo que falla y por qué, y los informes para corregir y para entregar.',
@@ -72,7 +72,7 @@ AUDITOR = {
 }
 
 CANTIDADES = {
-    'carpeta': 'cantidades', 'nombre': 'Cantidades', 'panel': 'Calidad BIM', 'version': 'V.0.12',
+    'carpeta': 'cantidades', 'nombre': 'Cantidades', 'panel': 'Calidad BIM', 'version': 'V.0.1.0',
     'titulo': 'Cantidades: el modelo convertido en tablas',
     'descripcion': 'Cómo usar NuHub Cantidades en Revit: cuantifica las categorías modeladas y exporta a Excel, PDF y al archivo para el Validador.',
     'entrada': 'Cantidades lee las categorías que tienen elementos en el modelo y te las entrega agrupadas por Type Name, con su nivel, la unidad que elijas y hasta 10 parámetros. Sale a Excel protegido, a PDF y al archivo que compara el Validador.',
@@ -127,7 +127,7 @@ CANTIDADES = {
 }
 
 LOIN = {
-    'carpeta': 'matriz-loin', 'nombre': 'Matriz LOIN', 'panel': 'Calidad BIM', 'version': 'V.0.5',
+    'carpeta': 'matriz-loin', 'nombre': 'Matriz LOIN', 'panel': 'Calidad BIM', 'version': 'V.0.1.0',
     'titulo': 'Matriz LOIN: ¿cada elemento tiene la información que pide el proyecto?',
     'descripcion': 'Cómo usar NuHub Matriz LOIN en Revit: revisa el nivel de información requerido (ISO 7817-1) por elemento y exporta la matriz.',
     'entrada': 'La Matriz LOIN revisa, elemento por elemento, si tiene la información que exige el proyecto (nivel de necesidad de información, ISO 7817-1). Te dice qué cumple, qué falta y en qué parámetro, con imágenes de cada tipo.',
@@ -188,7 +188,7 @@ LOIN = {
 }
 
 VALIDADOR = {
-    'carpeta': 'validador', 'nombre': 'Validador', 'panel': 'Externos', 'version': 'V.0.5',
+    'carpeta': 'validador', 'nombre': 'Validador', 'panel': 'Externos', 'version': 'V.0.1.0',
     'titulo': 'Validador: qué cambió entre dos entregas',
     'descripcion': 'Cómo usar NuHub Validador: compara auditorías, cantidades, matrices LOIN y colisiones entre una entrega anterior y una posterior.',
     'entrada': 'El Validador compara una entrega anterior (A) con una posterior (B): auditorías del Auditor, exportaciones de Cantidades, matrices LOIN o archivos de Colisiones. Te dice qué se mantuvo, qué cambió, qué es nuevo y qué se eliminó. No toca el modelo.',
@@ -247,7 +247,7 @@ VALIDADOR = {
 }
 
 EXTERNOS = {
-    'carpeta': 'externos', 'nombre': 'Externos', 'panel': 'Externos', 'version': 'V.0.4',
+    'carpeta': 'externos', 'nombre': 'Externos', 'panel': 'Externos', 'version': 'V.0.1.0',
     'titulo': 'Externos: hasta 30 modelos por lote, sin abrirlos uno a uno',
     'descripcion': 'Cómo usar NuHub Externos: procesa por lote hasta 30 modelos de Revit con auditoría, cantidades, exportaciones NWC e IFC y planos en PDF y DWG.',
     'entrada': 'Externos abre en segundo plano, de a uno, hasta 30 modelos de una carpeta y a cada uno le hace las tareas que elijas: Auditor, Cantidades, NWC, IFC, y planos en PDF o DWG. Al final te entrega los informes de cada modelo y un reporte del lote.',

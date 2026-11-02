@@ -19,13 +19,14 @@ GRUPOS = [('Calidad BIM', ['auditor', 'cantidades', 'matriz-loin']),
 RESUMEN = {'auditor': 'Audita el modelo con las reglas del BEP.', 'cantidades': 'Cantidades del modelo a Excel y PDF.',
            'matriz-loin': 'Revisa la información que exige el proyecto por elemento.', 'colisiones': 'Detecta y sigue interferencias entre disciplinas.',
            'revisor': 'Lleva los «No cumple» del Auditor al modelo y sigue las correcciones.', 'editar-informacion': 'Edita parámetros de muchos elementos a la vez.',
-           'renombrar': 'Gratis · Renombra familias, tipos, vistas, CAD y worksets.', 'plantillas': 'Gratis · Ordena, compara, copia y asigna plantillas de vista.',
-           'parametros': 'Gratis · Crea parámetros y limpia duplicados.', 'bibliotecas': 'Gratis · Busca familias .rfa de tus carpetas con vista previa y cárgalas al modelo.', 'exportadores': 'Exporta planos, vistas y tablas por lotes.',
+           'renombrar': 'Renombra familias, tipos, vistas, CAD y worksets.', 'plantillas': 'Ordena, compara, copia y asigna plantillas de vista.',
+           'parametros': 'Crea parámetros y limpia duplicados.', 'bibliotecas': 'Busca familias .rfa de tus carpetas con vista previa y cárgalas al modelo.', 'exportadores': 'Exporta planos, vistas y tablas por lotes.',
            'validador': 'Compara entregas: auditoría, cantidades, LOIN y colisiones.', 'externos': 'Procesa hasta 30 modelos por lote, también planos en PDF y DWG.',
            'cuenta': 'Tu cuenta, plan, usos, actualizaciones y PQR a soporte.'}
 secciones = ''.join(
     f'<section class="grupo"><h2>{g}</h2><div class="tarjetas">'
-    + ''.join(f'<a class="tarjeta" href="{c}/"><b>{por[c]["nombre"]}</b><span>{RESUMEN[c]}</span></a>' for c in cs)
+    + ''.join(f'<a class="tarjeta{" gratis" if por[c].get("gratis") else ""}" href="{c}/"><b>{por[c]["nombre"]}'
+              + ('<em class="sello">★ Gratis</em>' if por[c].get('gratis') else '') + f'</b><span>{RESUMEN[c]}</span></a>' for c in cs)
     + '</div></section>' for g, cs in GRUPOS)
 indice = f'''<!doctype html>
 <html lang="es">
@@ -43,7 +44,7 @@ indice = f'''<!doctype html>
   <header>
     <div class="panel">Plugins para Autodesk Revit 2024 · 2025 · 2026</div>
     <h1>Manual de los plugins NuHub</h1>
-    <p class="entrada">Qué hace cada plugin, el mapa de su proceso paso a paso y ejemplos de uso en un proyecto real. Todos están en la pestaña <b>NuHub</b> de Revit y funcionan con una sola cuenta NuHub.</p>
+    <p class="entrada">Qué hace cada plugin, el mapa de su proceso paso a paso y ejemplos de uso en un proyecto real. Todos están en la pestaña <b>NuHub</b> de Revit y funcionan con una sola cuenta NuHub. Los marcados con <em class="sello">★ Gratis</em> no tienen costo ni límite de usos.</p>
   </header>
   {secciones}
 </main>
