@@ -4,7 +4,7 @@ from pagina import B
 from datos_calidad import N, R
 
 COLISIONES = {
-    'carpeta': 'colisiones', 'nombre': 'Colisiones', 'panel': 'Gestión BIM', 'version': 'V.0.1.0',
+    'carpeta': 'colisiones', 'nombre': 'Colisiones', 'panel': 'Gestión BIM', 'version': 'V.0.20.0',
     'titulo': 'Colisiones: coordinación sin salir de Revit',
     'descripcion': 'Cómo usar NuHub Colisiones en Revit: configura Clash entre disciplinas, calcula interferencias, sigue cada grupo y genera el informe.',
     'entrada': 'Colisiones es un pequeño proceso de coordinación dentro de Revit: defines qué choca con qué (hasta 10 Clash), calcula las interferencias, las agrupa por elemento y te deja seguir cada grupo hasta resolverlo. No reemplaza a Navisworks; te ahorra salir de Revit para lo del día a día.',
@@ -63,7 +63,7 @@ COLISIONES = {
 }
 
 REVISOR = {
-    'carpeta': 'revisor', 'nombre': 'Revisor', 'panel': 'Gestión BIM', 'version': 'V.0.1.0',
+    'carpeta': 'revisor', 'nombre': 'Revisor', 'panel': 'Gestión BIM', 'version': 'V.0.20.0',
     'titulo': 'Revisor: de la auditoría al modelo corregido',
     'descripcion': 'Cómo usar NuHub Revisor en Revit: lleva al modelo los «No cumple» del Auditor, crea vistas 3D por apartado y hace el seguimiento de las correcciones.',
     'entrada': 'El Auditor te dice qué no cumple. El Revisor te lleva a cada uno de esos elementos dentro de Revit, los pinta en vistas 3D y te deja marcar qué ya se corrigió, para que el equipo trabaje sobre una lista viva y no sobre un PDF.',
@@ -130,7 +130,7 @@ REVISOR = {
 }
 
 EDITAR = {
-    'carpeta': 'editar-informacion', 'nombre': 'Editar Información', 'panel': 'Gestión BIM', 'version': 'V.0.1.0',
+    'carpeta': 'editar-informacion', 'nombre': 'Editar Información', 'panel': 'Gestión BIM', 'version': 'V.0.20.0',
     'titulo': 'Editar Información: muchos parámetros, una sola tabla',
     'descripcion': 'Cómo usar NuHub Editar Información en Revit: edita parámetros de muchos elementos en una tabla o desde Excel y aplícalos al modelo.',
     'entrada': 'Editar Información pone en una tabla los parámetros de familias, tipos, instancias, planos, vistas y la información del proyecto. Editas como en una hoja de cálculo, o en Excel, y aplicas todo al modelo de una vez.',
@@ -181,7 +181,7 @@ EDITAR = {
 }
 
 RENOMBRAR = {
-    'carpeta': 'renombrar', 'gratis': True, 'nombre': 'Renombrar', 'panel': 'Gestión BIM', 'gasta': False, 'version': 'V.0.1.0',
+    'carpeta': 'renombrar', 'gratis': True, 'nombre': 'Renombrar', 'panel': 'Gestión BIM', 'gasta': False, 'version': 'V.0.20.0',
     'titulo': 'Renombrar: nombres según el estándar, en bloque',
     'descripcion': 'Cómo usar NuHub Renombrar en Revit: renombra familias, tipos, vistas, archivos CAD y worksets en una tabla o desde Excel.',
     'entrada': 'Renombrar pone en tablas los nombres de familias, tipos, vistas, archivos CAD y worksets. Escribes el nombre nuevo, el plugin te avisa si se repite o no es válido, y aplicas todo de una vez.',
@@ -228,7 +228,7 @@ RENOMBRAR = {
 }
 
 PLANTILLAS = {
-    'carpeta': 'plantillas', 'gratis': True, 'nombre': 'Plantillas', 'panel': 'Gestión BIM', 'gasta': False, 'version': 'V.0.1.0',
+    'carpeta': 'plantillas', 'gratis': True, 'nombre': 'Plantillas', 'panel': 'Gestión BIM', 'gasta': False, 'version': 'V.0.20.0',
     'titulo': 'Plantillas: todas las plantillas de vista en una tabla',
     'descripcion': 'Cómo usar NuHub Plantillas en Revit: edita, crea, compara, copia V/G y asigna plantillas de vista en bloque, con una biblioteca de oficina.',
     'entrada': 'Plantillas reúne las plantillas de vista del modelo: sus propiedades, qué vistas las usan y su visibilidad y gráficos (V/G). Puedes crearlas, compararlas, copiar V/G de una a otras, asignarlas, borrar las que no se usan y guardar las estándar de tu oficina.',
@@ -286,7 +286,7 @@ PLANTILLAS = {
 }
 
 PARAMETROS = {
-    'carpeta': 'parametros', 'gratis': True, 'nombre': 'Parámetros', 'panel': 'Gestión BIM', 'gasta': False, 'version': 'V.0.1.0',
+    'carpeta': 'parametros', 'gratis': True, 'nombre': 'Parámetros', 'panel': 'Gestión BIM', 'gasta': False, 'version': 'V.0.20.0',
     'titulo': 'Parámetros: crear, ordenar y limpiar parámetros',
     'descripcion': 'Cómo usar NuHub Parámetros en Revit: crea parámetros compartidos y de proyecto desde una tabla o Excel, y limpia duplicados.',
     'entrada': 'Parámetros tiene tres pestañas: ver y limpiar los parámetros del modelo (incluidos los duplicados), crear parámetros compartidos en el archivo TXT y crear parámetros de proyecto, todo desde una tabla o desde Excel.',
@@ -335,7 +335,7 @@ PARAMETROS = {
 }
 
 EXPORTADORES = {
-    'carpeta': 'exportadores', 'nombre': 'Exportadores', 'panel': 'Gestión BIM', 'version': 'V.0.1.0',
+    'carpeta': 'exportadores', 'nombre': 'Exportadores', 'panel': 'Gestión BIM', 'version': 'V.0.20.0',
     'titulo': 'Exportadores: planos, vistas y tablas a todos los formatos',
     'descripcion': 'Cómo usar NuHub Exportadores en Revit: exporta por lotes a PDF, DWG, DXF, NWC, IFC, CSV y Excel con nombres según tu nomenclatura.',
     'entrada': 'Exportadores saca por lotes planos, vistas y tablas a PDF, DWG o DXF, NWC, IFC, CSV y Excel, con el nombre de cada archivo armado a partir de los metadatos del plano y con configuraciones que puedes guardar.',
@@ -355,13 +355,16 @@ EXPORTADORES = {
     'pasos': [
         {'t': 'Abre Exportadores', 'html': '<p>Pulsa ' + B('Exportadores') + '. Pestañas: <b>Planos</b>, <b>Vistas</b> y <b>Tablas de planificación</b>. Si cambian los planos en Revit, ' + B('Actualizar') + '.</p>'},
         {'t': 'Elige qué exportar', 'html': '<p>Marca planos o vistas; filtra y usa los ' + B('Publish Settings del modelo') + ' (conjuntos de planos). Guarda la selección en ' + B('Configuraciones de selección') + '.</p>'},
-        {'t': 'Arma la nomenclatura', 'html': '<p>' + B('Nomenclatura para DWG y PDF por metadatos') + ': eliges qué datos del plano forman el nombre, el separador y un consecutivo, con ' + B('Vista previa') + ' antes de aplicar.</p>', 'destacar': True},
+        {'t': 'Arma la nomenclatura', 'html': '<p>' + B('Nomenclatura para DWG y PDF por metadatos') + ': cada metadato es un texto fijo (por ejemplo «SOC») o, con el botón ▾, un <b>dato del modelo</b>: ' + B('Sheet Number') + ', ' + B('Sheet Name') + ', otro parámetro del plano o un parámetro de <b>Project Information</b> (Project Number, Client Name…). Eliges el separador y un consecutivo; los espacios y las mayúsculas de los datos del modelo se ajustan en ' + B('Datos del modelo') + ', y ' + B('Así quedan los primeros') + ' muestra el resultado antes de ' + B('Aplicar a planos seleccionados') + '.</p>', 'destacar': True},
         {'t': 'Formatos y configuración', 'html': '<p>' + B('Configurar PDF') + ': papel, color, combinar en un solo PDF. ' + B('Configurar CAD') + ': capas, colores, unidades y versión de AutoCAD. NWC e IFC: sus opciones nativas. Tablas: CSV o Excel. Todo se guarda como plantilla (máx. 5).</p>'},
         {'t': 'Carpetas de salida', 'html': '<p>Una carpeta por formato, y la opción de abrirla al terminar.</p>'
             '<p>Con ' + B('Listado de entrega (transmittal) en PDF') + ' marcado (viene marcado), al terminar sale un PDF con los datos del proyecto, el resumen por formato, la tabla de documentos con su revisión vigente y las casillas «Entregó» y «Recibió». No cuenta como documento de la licencia.</p>'},
         {'t': 'Exporta', 'html': '<p>' + B('Exportar') + ' o ' + B('Exportar todo') + ', con progreso y tiempo restante. ' + B('Exportar informe a Excel') + ' deja constancia de lo exportado.</p>', 'uso': 'Gasta 1 uso por cada archivo exportado'},
     ],
     'ejemplos': [
+        {'t': 'Nombres con el Sheet Number y el proyecto', 'quien': 'Coordinador de planos · el cliente exige «proyecto-número-nombre»',
+         'pasos': ['Metadato 1: Project Number (Project Information); Metadato 2: Sheet Number; Metadato 3: Sheet Name.', 'Datos del modelo: espacios por _ y TODO EN MAYÚSCULAS.', 'Revisa «Así quedan los primeros» y aplica a los planos marcados.'],
+         'resultado': 'T80-A-101-PLANTA_PRIMER_PISO.pdf en todos los planos, sin escribir un nombre a mano.'},
         {'t': 'Entrega al cliente en PDF y DWG', 'quien': 'Coordinador de planos · entrega de fase',
          'pasos': ['Marca los 60 planos de la fase.', 'Nomenclatura: código-disciplina-número-revisión.', 'PDF y DWG con la plantilla del cliente y «Exportar todo».'],
          'resultado': '120 archivos con el nombre que pide el cliente, en sus carpetas, y el transmittal en PDF para que lo firme quien recibe.'},
@@ -380,13 +383,14 @@ EXPORTADORES = {
                         ['IFC', 'El modelo o vistas 3D, con clases por categoría.'],
                         ['CSV · Excel', 'Tablas de planificación.']]},
     'preguntas': [
+        ('¿Puedo usar el Sheet Name o datos del proyecto en el nombre?', 'Sí. En cada metadato, el botón ▾ deja elegir Sheet Number, Sheet Name, otro parámetro del plano o un parámetro de Project Information. Se ven como una pastilla azul (cambia en cada plano) o verde (igual en todos). La configuración guarda qué dato va en cada metadato, así sirve en otros proyectos.'),
         ('¿Qué gasta un uso?', 'Cada archivo exportado: 10 planos en PDF y DWG son 20 usos. Configurar, la vista previa y el listado de entrega (transmittal) no gastan usos.'),
         ('¿Necesito algo para NWC?', 'El exportador de Navisworks (NWC Export Utility) instalado para tu versión de Revit.'),
     ],
 }
 
 BIBLIOTECAS = {
-    'carpeta': 'bibliotecas', 'gratis': True, 'nombre': 'Bibliotecas', 'panel': 'Gestión BIM', 'gasta': False, 'version': 'V.0.1.0',
+    'carpeta': 'bibliotecas', 'gratis': True, 'nombre': 'Bibliotecas', 'panel': 'Gestión BIM', 'gasta': False, 'version': 'V.0.20.0',
     'titulo': 'Bibliotecas: las familias de tu oficina, a un clic',
     'descripcion': 'Cómo usar NuHub Bibliotecas en Revit: busca familias .rfa en tus carpetas por categoría y Family Name, con vista previa, cárgalas al modelo y exporta el registro de familias a Excel.',
     'entrada': 'Bibliotecas lee las carpetas de familias de tu oficina (locales, de red u OneDrive) sin abrir cada archivo en Revit. Buscas por nombre, tipo o categoría, ves la miniatura y los tipos, y cargas al modelo solo lo que necesitas. También exporta a Excel el registro de las familias del modelo o de la biblioteca.',
@@ -440,7 +444,7 @@ BIBLIOTECAS = {
 }
 
 CUENTA = {
-    'carpeta': 'cuenta', 'nombre': 'Cuenta NuHub', 'panel': 'NuHub', 'version': 'V.0.1.0', 'gasta': False,
+    'carpeta': 'cuenta', 'nombre': 'Cuenta NuHub', 'panel': 'NuHub', 'version': 'V.0.20.0', 'gasta': False,
     'titulo': 'Cuenta NuHub: tu cuenta, tus plugins y soporte',
     'descripcion': 'Cómo usar Cuenta NuHub: crea tu cuenta, inicia sesión para todos los plugins, revisa plan, usos, vencimiento y actualizaciones, y envía PQR a soporte.',
     'entrada': 'Una sola cuenta para todos los plugins NuHub y todas tus versiones de Revit. Aquí creas la cuenta, inicias o cierras sesión, ves el plan, los usos, el vencimiento y si hay una versión nueva de cada plugin, y escribes a soporte con un PQR, incluso con capturas.',
