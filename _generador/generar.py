@@ -26,7 +26,7 @@ RESUMEN = {'auditor': 'Audita el modelo con las reglas del BEP.', 'cantidades': 
 secciones = ''.join(
     f'<section class="grupo"><h2>{g}</h2><div class="tarjetas">'
     + ''.join(f'<a class="tarjeta{" gratis" if por[c].get("gratis") else ""}" href="{c}/"><b>{por[c]["nombre"]}'
-              + ('<em class="sello">★ Gratis</em>' if por[c].get('gratis') else '') + f'</b><span>{RESUMEN[c]}</span></a>' for c in cs)
+              + ('<em class="sello"><i>★</i> Gratis</em>' if por[c].get('gratis') else '') + f'</b><span>{RESUMEN[c]}</span></a>' for c in cs)
     + '</div></section>' for g, cs in GRUPOS)
 indice = f'''<!doctype html>
 <html lang="es">
@@ -36,7 +36,7 @@ indice = f'''<!doctype html>
 <title>Manual NuHub</title>
 <meta name="description" content="Manual de usuario de los plugins NuHub para Autodesk Revit: qué hace cada plugin, el mapa de su proceso y ejemplos de uso.">
 {FUENTES}
-<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="estilos.css?v=20261101">
 </head>
 <body>
 <div class="barra"><a class="marca" href="./"><i>N</i>Manual NuHub</a></div>
@@ -44,7 +44,7 @@ indice = f'''<!doctype html>
   <header>
     <div class="panel">Plugins para Autodesk Revit 2024 · 2025 · 2026</div>
     <h1>Manual de los plugins NuHub</h1>
-    <p class="entrada">Qué hace cada plugin, el mapa de su proceso paso a paso y ejemplos de uso en un proyecto real. Todos están en la pestaña <b>NuHub</b> de Revit y funcionan con una sola cuenta NuHub. Los marcados con <em class="sello">★ Gratis</em> no tienen costo ni límite de usos.</p>
+    <p class="entrada">Qué hace cada plugin, el mapa de su proceso paso a paso y ejemplos de uso en un proyecto real. Todos están en la pestaña <b>NuHub</b> de Revit y funcionan con una sola cuenta NuHub. Los marcados con <em class="sello"><i>★</i> Gratis</em> no tienen costo ni límite de usos.</p>
   </header>
   {secciones}
 </main>

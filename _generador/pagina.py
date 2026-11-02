@@ -39,7 +39,7 @@ def pagina(d):
 <title>{d["nombre"]} · Manual NuHub</title>
 <meta name="description" content="{html.escape(d["descripcion"])}">
 {FUENTES}
-<link rel="stylesheet" href="../estilos.css">
+<link rel="stylesheet" href="../estilos.css?v=20261101">
 </head>
 <body>
 <div class="barra">
@@ -49,7 +49,7 @@ def pagina(d):
 <main>
   <div class="arriba">
   <header>
-    <div class="panel">{d["panel"]} · {d["nombre"]}{' <em class="sello">★ Gratis</em>' if d.get("gratis") else ''}</div>
+    <div class="panel">{d["panel"]} · {d["nombre"]}{' <em class="sello"><i>★</i> Gratis</em>' if d.get("gratis") else ''}</div>
     <h1>{d["titulo"]}</h1>
     <p class="entrada">{d["entrada"]}</p>
   </header>
